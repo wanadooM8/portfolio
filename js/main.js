@@ -15,4 +15,5 @@ document.addEventListener('DOMContentLoaded', function () {
   initEasterEgg();
   initHeroAnimation();
   initScrollReveals();
+  initMarquee();
 });

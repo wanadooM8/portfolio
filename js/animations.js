@@ -44,3 +44,17 @@ function initScrollReveals() {
     });
   });
 }
+
+function initMarquee() {
+  var track = document.querySelector('.marquee__track');
+  if (!track) return;
+  if (window.PortfolioUtils.prefersReducedMotion()) return;
+
+  var width = track.scrollWidth / 2;
+  gsap.to(track, {
+    x: -width,
+    duration: 20,
+    ease: 'none',
+    repeat: -1
+  });
+}
