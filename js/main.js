@@ -12,4 +12,5 @@ function initSmoothNav() {
 
 document.addEventListener('DOMContentLoaded', function () {
   initSmoothNav();
+  initEasterEgg();
 });
