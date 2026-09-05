@@ -1,0 +1,18 @@
+:root {
+  --color-bg: #09090B;
+  --color-fg: #FAFAFA;
+  --color-accent: #DFE104;
+  --color-accent-fg: #000000;
+  --color-border: #3F3F46;
+  --color-muted: #A1A1AA;
+  --border-width: 2px;
+  --radius: 0px;
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 48px;
+  --space-5: 96px;
+  --transition-fast: 120ms ease;
+}
