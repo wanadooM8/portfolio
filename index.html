@@ -41,7 +41,37 @@
         </div>
       </div>
     </section>
-    <section id="about"></section>
+    <section id="about">
+      <div class="container about__grid">
+        <div class="avatar" aria-hidden="false">
+          <img src="assets/profile.jpg" alt="Photo d'Ethan Bernier"
+               onerror="this.replaceWith(Object.assign(document.createElement('div'), {className: 'avatar-fallback', textContent: 'EB'}))">
+        </div>
+        <div class="about__content">
+          <h2>À propos</h2>
+          <p>
+            Étudiant en informatique, je suis passionné par les nouvelles technologies.
+            Curieux et autonome, j'ai développé des compétences en développement web,
+            en data analyse avec Python et en gestion de bases de données en SQL.
+            Je recherche actuellement un stage pour mettre mes connaissances en
+            pratique et apporter un regard neuf, ainsi qu'une contribution motivée
+            et sérieuse.
+          </p>
+          <ul class="tag-list" aria-label="Soft skills">
+            <li class="tag">Travail d'équipe</li>
+            <li class="tag">Curiosité</li>
+            <li class="tag">Adaptabilité</li>
+          </ul>
+          <h3>En dehors du code</h3>
+          <ul class="tag-list" aria-label="Centres d'intérêt">
+            <li class="tag">Course à pied, ski, randonnée, vélo</li>
+            <li class="tag">Dessin, peinture sur figurines</li>
+            <li class="tag">Zelda, Cyberpunk</li>
+            <li class="tag">Jeux de société</li>
+          </ul>
+        </div>
+      </div>
+    </section>
     <section id="projects"></section>
     <section id="skills"></section>
     <section id="timeline"></section>
