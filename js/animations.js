@@ -23,3 +23,24 @@ function initHeroAnimation() {
     ease: 'expo.out'
   });
 }
+
+function initScrollReveals() {
+  if (window.PortfolioUtils.prefersReducedMotion()) return;
+  if (typeof ScrollTrigger === 'undefined') return;
+
+  gsap.registerPlugin(ScrollTrigger);
+  document.querySelectorAll('.reveal').forEach(function (el) {
+    gsap.from(el.children, {
+      opacity: 0,
+      y: 24,
+      duration: 0.5,
+      stagger: 0.08,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: el,
+        start: 'top 85%',
+        toggleActions: 'play none none reverse'
+      }
+    });
+  });
+}
