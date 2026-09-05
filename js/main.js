@@ -5,7 +5,7 @@ function initSmoothNav() {
       var target = document.getElementById(targetId);
       if (!target) return;
       event.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      target.scrollIntoView({ behavior: window.PortfolioUtils.prefersReducedMotion() ? 'auto' : 'smooth', block: 'start' });
     });
   });
 }
