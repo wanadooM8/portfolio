@@ -17,6 +17,10 @@
   font-family: var(--font-mono);
   font-weight: 700;
   font-size: 1.25rem;
+  padding: var(--space-2);
+  display: flex;
+  align-items: center;
+  min-height: 44px;
 }
 
 .nav__links {
