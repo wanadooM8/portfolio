@@ -17,9 +17,30 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Aller au contenu</a>
-  <header id="site-header"></header>
+  <header id="site-header">
+    <nav class="nav container" aria-label="Navigation principale">
+      <a class="nav__brand" href="#hero">EB</a>
+      <ul class="nav__links">
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#projects">Projets</a></li>
+        <li><a href="#skills">Compétences</a></li>
+        <li><a href="#timeline">Parcours</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
   <main id="main">
-    <section id="hero"></section>
+    <section id="hero">
+      <div class="container hero__inner">
+        <p class="label">Étudiant en informatique — BUT, IUT Bayonne</p>
+        <h1 id="hero-title">Ethan Bernier</h1>
+        <p class="hero__tagline">Curieux. Autonome. Prêt à coder pour votre équipe.</p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#projects">Voir mes projets</a>
+          <a class="btn btn--ghost" href="assets/cv.pdf" download>Télécharger mon CV</a>
+        </div>
+      </div>
+    </section>
     <section id="about"></section>
     <section id="projects"></section>
     <section id="skills"></section>
