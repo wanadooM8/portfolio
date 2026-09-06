@@ -5,6 +5,7 @@
   --color-accent-fg: #000000;
   --color-border: #3F3F46;
   --color-muted: #A1A1AA;
+  --color-focus: var(--color-accent);
   --border-width: 2px;
   --radius: 0px;
   --font-display: 'Space Grotesk', system-ui, sans-serif;
@@ -20,8 +21,9 @@
 :root[data-theme="light"] {
   --color-bg: #FAFAFA;
   --color-fg: #09090B;
-  --color-accent: #C9CB00;
+  --color-accent: #D6B800;
   --color-accent-fg: #000000;
-  --color-border: #D4D4D8;
-  --color-muted: #71717A;
+  --color-border: #A1A1AA;
+  --color-muted: #52525B;
+  --color-focus: var(--color-fg);
 }

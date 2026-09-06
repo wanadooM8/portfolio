@@ -78,7 +78,8 @@
   border-color: var(--color-accent-fg);
 }
 
-.theme-toggle {
+.theme-toggle,
+.nav__toggle {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -93,9 +94,19 @@
   cursor: pointer;
   transition: background var(--transition-fast), color var(--transition-fast);
 }
-.theme-toggle:hover, .theme-toggle:focus-visible {
+.theme-toggle:hover, .theme-toggle:focus-visible,
+.nav__toggle:hover, .nav__toggle:focus-visible {
   background: var(--color-fg);
   color: var(--color-bg);
+}
+
+.nav__toggle {
+  display: none;
+}
+.nav__toggle svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
 }
 
 .triforce-overlay {
@@ -115,21 +126,25 @@
 }
 
 @media (max-width: 767px) {
-  .nav {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-1);
-    padding-block: var(--space-1);
-  }
-  .nav__right {
-    flex-wrap: wrap;
-    gap: var(--space-2);
+  .nav__toggle {
+    display: inline-flex;
   }
   .nav__links {
-    flex-wrap: wrap;
-    gap: var(--space-2);
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: var(--color-bg);
+    border-top: var(--border-width) solid var(--color-border);
+    padding: var(--space-2);
   }
-  html {
-    scroll-padding-top: 13rem;
+  .nav__links.is-open {
+    display: flex;
+  }
+  .nav__links a {
+    width: 100%;
   }
 }

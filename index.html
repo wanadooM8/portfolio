@@ -32,7 +32,7 @@
     <nav class="nav container" aria-label="Navigation principale">
       <a class="nav__brand" href="#hero">EB</a>
       <div class="nav__right">
-        <ul class="nav__links">
+        <ul class="nav__links" id="nav-links">
           <li><a href="#about">À propos</a></li>
           <li><a href="#projects">Projets</a></li>
           <li><a href="#skills">Compétences</a></li>
@@ -40,6 +40,11 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
         <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Activer le mode clair">☀</button>
+        <button type="button" class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Ouvrir le menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="3">
+            <path stroke-linecap="square" stroke-linejoin="miter" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
       </div>
     </nav>
   </header>
