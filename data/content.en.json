@@ -1,0 +1,58 @@
+{
+  "about": {
+    "photo": "assets/profile.jpg",
+    "photoAlt": "Photo of Ethan Bernier",
+    "bio": "Computer science student, I'm passionate about new technologies. Curious and independent, I've developed skills in web development, data analysis with Python, and database management with SQL. I'm currently looking for an internship to put my knowledge into practice and bring your company a fresh perspective, along with a motivated and serious contribution.",
+    "softSkills": ["Teamwork", "Curiosity", "Adaptability"],
+    "interestsHeading": "Outside of code",
+    "interests": [
+      "Running, skiing, hiking, cycling",
+      "Drawing, miniature painting",
+      "Zelda, Cyberpunk",
+      "Board games"
+    ]
+  },
+  "skills": {
+    "groups": [
+      { "title": "Programming", "items": ["C++", "Python", "Java"] },
+      { "title": "Web development", "items": ["HTML", "CSS", "JavaScript", "PHP"] },
+      { "title": "Databases", "items": ["MySQL", "Oracle"] },
+      { "title": "Tools", "items": ["Git", "Figma"] },
+      { "title": "Languages", "items": ["French — C1", "English — B1"] }
+    ]
+  },
+  "timeline": [
+    {
+      "date": "2020 – 2024",
+      "title": "General Baccalaureate",
+      "description": "Lycée Saint-John-Perse, Pau — Mathematics and Physics-Chemistry specialties, advanced Mathematics option."
+    },
+    {
+      "date": "2022",
+      "title": "Aeronautical Introduction Certificate (BIA)",
+      "description": "Lycée Louis-Barthou, Pau."
+    },
+    {
+      "date": "2025",
+      "title": "Yujo social network",
+      "description": "Team project, UPPA — see the Projects section."
+    },
+    {
+      "date": "2025 – 2027",
+      "title": "Bachelor's degree in Computer Science Technologies",
+      "description": "IUT de Bayonne et du Pays Basque, Anglet."
+    },
+    {
+      "date": "2026",
+      "title": "Web Developer & CRM Internship",
+      "description": "Association Autonomia 64, Puyoô — see the Projects section."
+    }
+  ],
+  "contact": {
+    "email": "ethan.bernier66@gmail.com",
+    "phone": "+33 7 69 77 03 64",
+    "github": "https://github.com/wanadooM8",
+    "linkedin": "https://www.linkedin.com/in/ethan-bernier-iutbayonne/",
+    "cvFile": "assets/cv.pdf"
+  }
+}

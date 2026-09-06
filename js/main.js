@@ -39,14 +39,18 @@ function initMobileNav() {
   function closeMenu() {
     links.classList.remove('is-open');
     toggle.setAttribute('aria-expanded', 'false');
-    toggle.setAttribute('aria-label', 'Ouvrir le menu');
+    toggle.setAttribute('aria-label', window.PortfolioI18n.t('menuOpen'));
   }
 
   function openMenu() {
     links.classList.add('is-open');
     toggle.setAttribute('aria-expanded', 'true');
-    toggle.setAttribute('aria-label', 'Fermer le menu');
+    toggle.setAttribute('aria-label', window.PortfolioI18n.t('menuClose'));
   }
+
+  window.addEventListener('portfolio:langchange', function () {
+    toggle.setAttribute('aria-label', window.PortfolioI18n.t(links.classList.contains('is-open') ? 'menuClose' : 'menuOpen'));
+  });
 
   toggle.addEventListener('click', function () {
     if (links.classList.contains('is-open')) {
@@ -70,6 +74,35 @@ function initMobileNav() {
   });
 }
 
+function initLangToggle() {
+  var button = document.getElementById('lang-toggle');
+  if (!button) return;
+
+  function updateButton() {
+    button.textContent = window.PortfolioI18n.t('langSwitchLabel');
+    button.setAttribute('aria-label', window.PortfolioI18n.t('langSwitchAria'));
+  }
+  updateButton();
+
+  button.addEventListener('click', function () {
+    var next = window.PortfolioI18n.getLang() === 'fr' ? 'en' : 'fr';
+    window.PortfolioI18n.setLang(next);
+    window.PortfolioI18n.applyStaticTranslations();
+    updateButton();
+    window.dispatchEvent(new Event('portfolio:langchange'));
+    reloadLocalizedContent();
+  });
+}
+
+function reloadLocalizedContent() {
+  killScrollAnimations();
+  Promise.all([initProjects(), initContent()]).then(function () {
+    initScrollReveals();
+    initTimelineLine();
+    initCardTilt();
+  });
+}
+
 function whenHero3DSettled(callback) {
   var done = false;
   function fire() {
@@ -87,8 +120,10 @@ function whenHero3DSettled(callback) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+  window.PortfolioI18n.applyStaticTranslations();
   initSmoothNav();
   initThemeToggle();
+  initLangToggle();
   initMobileNav();
   initEasterEgg();
   initHeroAnimation();

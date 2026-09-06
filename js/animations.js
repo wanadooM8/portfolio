@@ -1,3 +1,14 @@
+function killScrollAnimations() {
+  if (typeof ScrollTrigger === 'undefined') return;
+  // Tue tous les ScrollTrigger sauf le pin du modele 3D du Hero, pour
+  // pouvoir reconstruire proprement le reveal/la timeline/le tilt apres un
+  // changement de langue (le contenu DOM sous-jacent est regenere).
+  ScrollTrigger.getAll().forEach(function (st) {
+    if (st.vars && st.vars.pin) return;
+    st.kill();
+  });
+}
+
 function initHeroAnimation() {
   var title = document.getElementById('hero-title');
   if (!title) return;

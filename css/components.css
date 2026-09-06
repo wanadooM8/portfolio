@@ -180,6 +180,7 @@
   stroke: var(--color-accent);
 }
 
+.lang-toggle,
 .theme-toggle,
 .nav__toggle {
   display: inline-flex;
@@ -195,10 +196,18 @@
   cursor: pointer;
   transition: background var(--transition-fast), color var(--transition-fast);
 }
+.lang-toggle:hover, .lang-toggle:focus-visible,
 .theme-toggle:hover, .theme-toggle:focus-visible,
 .nav__toggle:hover, .nav__toggle:focus-visible {
   background: var(--color-fg);
   color: var(--color-bg);
+}
+
+.lang-toggle {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
 }
 
 .theme-toggle svg,

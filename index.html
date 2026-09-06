@@ -4,9 +4,13 @@
   <script>
     (function () {
       try {
-        var stored = localStorage.getItem('portfolio-theme');
-        if (stored === 'light' || stored === 'dark') {
-          document.documentElement.setAttribute('data-theme', stored);
+        var storedTheme = localStorage.getItem('portfolio-theme');
+        if (storedTheme === 'light' || storedTheme === 'dark') {
+          document.documentElement.setAttribute('data-theme', storedTheme);
+        }
+        var storedLang = localStorage.getItem('portfolio-lang');
+        if (storedLang === 'en' || storedLang === 'fr') {
+          document.documentElement.setAttribute('lang', storedLang);
         }
       } catch (e) {}
     })();
@@ -46,18 +50,19 @@
   <link rel="stylesheet" href="css/animations.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Aller au contenu</a>
+  <a class="skip-link" href="#main" data-i18n="skipLink">Aller au contenu</a>
   <header id="site-header">
     <nav class="nav container" aria-label="Navigation principale">
       <a class="nav__brand" href="#hero">EB<span class="nav__brand-mark" aria-hidden="true"></span></a>
       <div class="nav__right">
         <ul class="nav__links" id="nav-links">
-          <li><a href="#about">À propos</a></li>
-          <li><a href="#projects">Projets</a></li>
-          <li><a href="#skills">Compétences</a></li>
-          <li><a href="#timeline">Parcours</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#about" data-i18n="navAbout">À propos</a></li>
+          <li><a href="#projects" data-i18n="navProjects">Projets</a></li>
+          <li><a href="#skills" data-i18n="navSkills">Compétences</a></li>
+          <li><a href="#timeline" data-i18n="navTimeline">Parcours</a></li>
+          <li><a href="#contact" data-i18n="navContact">Contact</a></li>
         </ul>
+        <button type="button" class="lang-toggle" id="lang-toggle" aria-label="Switch to English">EN</button>
         <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Activer le mode clair"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></button>
         <button type="button" class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Ouvrir le menu">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="3">
@@ -71,12 +76,12 @@
     <section id="hero">
       <div class="container hero__inner">
         <div class="hero__text">
-          <p class="label hero__badge">Étudiant en informatique — BUT, IUT Bayonne</p>
+          <p class="label hero__badge" data-i18n="heroBadge">Étudiant en informatique — BUT, IUT Bayonne</p>
           <h1 id="hero-title">Ethan Bernier</h1>
-          <p class="hero__tagline">Curieux. Autonome. Prêt à coder pour votre équipe.</p>
+          <p class="hero__tagline" data-i18n="heroTagline">Curieux. Autonome. Prêt à coder pour votre équipe.</p>
           <div class="hero__cta">
-            <a class="btn btn--primary" href="#projects">Voir mes projets</a>
-            <a class="btn btn--ghost" href="assets/cv.pdf" download>Télécharger mon CV</a>
+            <a class="btn btn--primary" href="#projects" data-i18n="ctaProjects">Voir mes projets</a>
+            <a class="btn btn--ghost" href="assets/cv.pdf" download data-i18n="ctaCv">Télécharger mon CV</a>
           </div>
         </div>
         <div class="hero__3d" id="hero-3d" aria-hidden="true"></div>
@@ -87,7 +92,7 @@
         <div class="avatar" id="about-avatar" aria-hidden="false"></div>
         <div class="about__content">
           <p class="section-index" aria-hidden="true">01</p>
-          <h2>À propos</h2>
+          <h2 data-i18n="sectionAbout">À propos</h2>
           <div id="about-content" class="is-loading"></div>
         </div>
       </div>
@@ -95,7 +100,7 @@
     <section id="projects">
       <div class="container reveal">
         <p class="section-index" aria-hidden="true">02</p>
-        <h2>Projets</h2>
+        <h2 data-i18n="sectionProjects">Projets</h2>
         <div class="projects__grid is-loading">
           <noscript>Active JavaScript pour afficher les projets.</noscript>
         </div>
@@ -104,14 +109,14 @@
     <section id="skills">
       <div class="container reveal">
         <p class="section-index" aria-hidden="true">03</p>
-        <h2>Compétences</h2>
+        <h2 data-i18n="sectionSkills">Compétences</h2>
         <div class="skills__grid is-loading" id="skills-grid"></div>
       </div>
     </section>
     <section id="timeline">
       <div class="container reveal">
         <p class="section-index" aria-hidden="true">04</p>
-        <h2>Parcours</h2>
+        <h2 data-i18n="sectionTimeline">Parcours</h2>
         <div class="timeline-wrap">
           <div class="timeline__line" aria-hidden="true"></div>
           <ol class="timeline is-loading" id="timeline-list"></ol>
@@ -121,7 +126,7 @@
     <section id="contact">
       <div class="container contact__grid reveal">
         <p class="section-index" aria-hidden="true">05</p>
-        <h2>Contact</h2>
+        <h2 data-i18n="sectionContact">Contact</h2>
         <ul class="contact__links is-loading" id="contact-links"></ul>
       </div>
     </section>
@@ -160,6 +165,7 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
   <script src="js/utils.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="js/theme.js"></script>
   <script src="js/easter-egg.js"></script>
   <script src="js/animations.js"></script>

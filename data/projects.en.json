@@ -1,0 +1,24 @@
+[
+  {
+    "id": "autonomia64",
+    "year": "2026",
+    "org": "Association Autonomia 64",
+    "title": "Web Portal & CRM",
+    "description": "Web developer internship: functional needs analysis, development of an administrable portal with Laravel and Filament, involvement across the full cycle (analysis, design, development, testing, deployment).",
+    "category": { "label": "Internship", "type": "pro" },
+    "stack": ["Laravel", "Filament", "PHP", "JavaScript", "HTML/CSS", "MySQL", "Git", "Figma"],
+    "link": null,
+    "image": null
+  },
+  {
+    "id": "yujo",
+    "year": "2025",
+    "org": "UPPA",
+    "title": "Yujo social network",
+    "description": "Team development, agile methodology, of a web application centered on customizable virtual rooms.",
+    "category": { "label": "Student project", "type": "study" },
+    "stack": ["HTML", "PHP", "CSS", "SQL", "Project management", "Figma"],
+    "link": null,
+    "image": null
+  }
+]

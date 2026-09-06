@@ -40,7 +40,7 @@ function buildProjectCard(project) {
     link.href = project.link;
     link.target = '_blank';
     link.rel = 'noopener noreferrer';
-    link.setAttribute('aria-label', 'Voir le projet ' + project.title + ' (nouvel onglet)');
+    link.setAttribute('aria-label', window.PortfolioI18n.t('ariaViewProjectPrefix') + project.title + window.PortfolioI18n.t('ariaViewProjectSuffix'));
     link.innerHTML = PROJECT_LINK_ICON;
     header.appendChild(link);
   }
@@ -57,7 +57,7 @@ function buildProjectCard(project) {
 
   var stackList = document.createElement('ul');
   stackList.className = 'tag-list';
-  stackList.setAttribute('aria-label', 'Compétences utilisées');
+  stackList.setAttribute('aria-label', window.PortfolioI18n.t('ariaStack'));
   project.stack.forEach(function (item) {
     var li = document.createElement('li');
     li.className = 'tag';
@@ -73,7 +73,7 @@ function initProjects() {
   var grid = document.querySelector('.projects__grid');
   if (!grid) return Promise.resolve();
 
-  return fetch('data/projects.json')
+  return fetch('data/projects.' + window.PortfolioI18n.getLang() + '.json')
     .then(function (response) {
       if (!response.ok) throw new Error('Réponse HTTP ' + response.status);
       return response.json();

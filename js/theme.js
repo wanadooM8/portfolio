@@ -13,12 +13,16 @@ function initThemeToggle() {
   function updateButton(theme) {
     if (theme === 'light') {
       button.innerHTML = ICON_MOON;
-      button.setAttribute('aria-label', 'Activer le mode sombre');
+      button.setAttribute('aria-label', window.PortfolioI18n.t('themeToDark'));
     } else {
       button.innerHTML = ICON_SUN;
-      button.setAttribute('aria-label', 'Activer le mode clair');
+      button.setAttribute('aria-label', window.PortfolioI18n.t('themeToLight'));
     }
   }
+
+  window.addEventListener('portfolio:langchange', function () {
+    updateButton(currentTheme());
+  });
 
   updateButton(currentTheme());
 

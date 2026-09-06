@@ -16,6 +16,9 @@ function renderAbout(data) {
   var content = document.getElementById('about-content');
   if (!avatar || !content || !data) return;
 
+  avatar.innerHTML = '';
+  content.innerHTML = '';
+
   var img = document.createElement('img');
   img.src = data.photo;
   img.alt = data.photoAlt || '';
@@ -34,13 +37,13 @@ function renderAbout(data) {
   bio.textContent = data.bio;
   content.appendChild(bio);
 
-  content.appendChild(buildTagList(data.softSkills, 'Soft skills'));
+  content.appendChild(buildTagList(data.softSkills, window.PortfolioI18n.t('ariaSoftSkills')));
 
   var interestsHeading = document.createElement('h3');
   interestsHeading.textContent = data.interestsHeading;
   content.appendChild(interestsHeading);
 
-  content.appendChild(buildTagList(data.interests, "Centres d'intérêt"));
+  content.appendChild(buildTagList(data.interests, window.PortfolioI18n.t('ariaInterests')));
 
   content.classList.remove('is-loading');
 }
@@ -48,6 +51,8 @@ function renderAbout(data) {
 function renderSkills(data) {
   var grid = document.getElementById('skills-grid');
   if (!grid || !data) return;
+
+  grid.innerHTML = '';
 
   data.groups.forEach(function (group) {
     var wrapper = document.createElement('div');
@@ -67,6 +72,8 @@ function renderSkills(data) {
 function renderTimeline(data) {
   var list = document.getElementById('timeline-list');
   if (!list || !data) return;
+
+  list.innerHTML = '';
 
   data.forEach(function (item) {
     var li = document.createElement('li');
@@ -95,12 +102,14 @@ function renderContact(data) {
   var list = document.getElementById('contact-links');
   if (!list || !data) return;
 
+  list.innerHTML = '';
+
   var links = [
     { text: data.email, href: 'mailto:' + data.email, variant: 'primary' },
     { text: data.phone, href: 'tel:' + data.phone.replace(/\s+/g, ''), variant: 'ghost' },
-    { text: data.github.replace(/^https?:\/\//, ''), href: data.github, variant: 'ghost', external: true, ariaLabel: 'Ouvrir le profil GitHub d\'Ethan Bernier (nouvel onglet)' },
-    { text: 'LinkedIn', href: data.linkedin, variant: 'ghost', external: true, ariaLabel: 'Ouvrir le profil LinkedIn d\'Ethan Bernier (nouvel onglet)' },
-    { text: 'Télécharger mon CV', href: data.cvFile, variant: 'ghost', download: true }
+    { text: data.github.replace(/^https?:\/\//, ''), href: data.github, variant: 'ghost', external: true, ariaLabel: window.PortfolioI18n.t('ariaGithub') },
+    { text: 'LinkedIn', href: data.linkedin, variant: 'ghost', external: true, ariaLabel: window.PortfolioI18n.t('ariaLinkedin') },
+    { text: window.PortfolioI18n.t('downloadCv'), href: data.cvFile, variant: 'ghost', download: true }
   ];
 
   links.forEach(function (link) {
@@ -124,7 +133,7 @@ function renderContact(data) {
 }
 
 function initContent() {
-  return fetch('data/content.json')
+  return fetch('data/content.' + window.PortfolioI18n.getLang() + '.json')
     .then(function (response) {
       if (!response.ok) throw new Error('Réponse HTTP ' + response.status);
       return response.json();
