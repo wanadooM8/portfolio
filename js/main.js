@@ -16,6 +16,7 @@ function initSmoothNav() {
 
 document.addEventListener('DOMContentLoaded', function () {
   initSmoothNav();
+  initThemeToggle();
   initEasterEgg();
   initHeroAnimation();
   initScrollReveals();

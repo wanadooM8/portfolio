@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('portfolio-theme');
+        if (stored === 'light' || stored === 'dark') {
+          document.documentElement.setAttribute('data-theme', stored);
+        }
+      } catch (e) {}
+    })();
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ethan Bernier — Développeur Web</title>
@@ -21,13 +31,16 @@
   <header id="site-header">
     <nav class="nav container" aria-label="Navigation principale">
       <a class="nav__brand" href="#hero">EB</a>
-      <ul class="nav__links">
-        <li><a href="#about">À propos</a></li>
-        <li><a href="#projects">Projets</a></li>
-        <li><a href="#skills">Compétences</a></li>
-        <li><a href="#timeline">Parcours</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <div class="nav__right">
+        <ul class="nav__links">
+          <li><a href="#about">À propos</a></li>
+          <li><a href="#projects">Projets</a></li>
+          <li><a href="#skills">Compétences</a></li>
+          <li><a href="#timeline">Parcours</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Activer le mode clair">☀</button>
+      </div>
     </nav>
   </header>
   <main id="main">
@@ -228,6 +241,7 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
   <script src="js/utils.js"></script>
+  <script src="js/theme.js"></script>
   <script src="js/easter-egg.js"></script>
   <script src="js/animations.js"></script>
   <script src="js/main.js"></script>

@@ -15,7 +15,15 @@ function prefersReducedMotion() {
   );
 }
 
-var PortfolioUtils = { matchesKeySequence: matchesKeySequence, prefersReducedMotion: prefersReducedMotion };
+function nextTheme(current) {
+  return current === 'light' ? 'dark' : 'light';
+}
+
+var PortfolioUtils = {
+  matchesKeySequence: matchesKeySequence,
+  prefersReducedMotion: prefersReducedMotion,
+  nextTheme: nextTheme
+};
 
 if (typeof window !== 'undefined') {
   window.PortfolioUtils = PortfolioUtils;
