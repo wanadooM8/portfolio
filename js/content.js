@@ -40,6 +40,7 @@ function renderAbout(data) {
   content.appendChild(buildTagList(data.softSkills, window.PortfolioI18n.t('ariaSoftSkills')));
 
   var interestsHeading = document.createElement('h3');
+  interestsHeading.className = 'about__interests-heading';
   interestsHeading.textContent = data.interestsHeading;
   content.appendChild(interestsHeading);
 

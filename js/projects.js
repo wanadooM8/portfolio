@@ -9,7 +9,7 @@ function buildProjectCard(project) {
   if (project.image) {
     var img = document.createElement('img');
     img.src = project.image;
-    img.alt = '';
+    img.alt = window.PortfolioI18n.t('screenshotPrefix') + project.title;
     img.loading = 'lazy';
     visual.appendChild(img);
   } else {

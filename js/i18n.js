@@ -31,6 +31,7 @@ var I18N_STRINGS = {
     ariaStack: 'Compétences utilisées',
     ariaViewProjectPrefix: 'Voir le projet ',
     ariaViewProjectSuffix: ' (nouvel onglet)',
+    screenshotPrefix: "Capture d'écran du projet ",
     downloadCv: 'Télécharger mon CV'
   },
   en: {
@@ -63,6 +64,7 @@ var I18N_STRINGS = {
     ariaStack: 'Technologies used',
     ariaViewProjectPrefix: 'View project ',
     ariaViewProjectSuffix: ' (new tab)',
+    screenshotPrefix: 'Screenshot of the project ',
     downloadCv: 'Download my resume'
   }
 };

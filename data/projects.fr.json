@@ -8,7 +8,7 @@
     "category": { "label": "Stage", "type": "pro" },
     "stack": ["Laravel", "Filament", "PHP", "JavaScript", "HTML/CSS", "MySQL", "Git", "Figma"],
     "link": null,
-    "image": null
+    "image": "assets/autonomia64.jpg"
   },
   {
     "id": "yujo",
@@ -19,6 +19,6 @@
     "category": { "label": "Projet étudiant", "type": "study" },
     "stack": ["HTML", "PHP", "CSS", "SQL", "Gestion de projet", "Figma"],
     "link": null,
-    "image": null
+    "image": "assets/yujo.jpg"
   }
 ]

@@ -8,7 +8,7 @@
     "category": { "label": "Internship", "type": "pro" },
     "stack": ["Laravel", "Filament", "PHP", "JavaScript", "HTML/CSS", "MySQL", "Git", "Figma"],
     "link": null,
-    "image": null
+    "image": "assets/autonomia64.jpg"
   },
   {
     "id": "yujo",
@@ -19,6 +19,6 @@
     "category": { "label": "Student project", "type": "study" },
     "stack": ["HTML", "PHP", "CSS", "SQL", "Project management", "Figma"],
     "link": null,
-    "image": null
+    "image": "assets/yujo.jpg"
   }
 ]
