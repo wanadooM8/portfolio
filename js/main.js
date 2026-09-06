@@ -6,6 +6,10 @@ function initSmoothNav() {
       if (!target) return;
       event.preventDefault();
       target.scrollIntoView({ behavior: window.PortfolioUtils.prefersReducedMotion() ? 'auto' : 'smooth', block: 'start' });
+      if (!target.hasAttribute('tabindex')) {
+        target.setAttribute('tabindex', '-1');
+      }
+      target.focus({ preventScroll: true });
     });
   });
 }

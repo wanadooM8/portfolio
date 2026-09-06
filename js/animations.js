@@ -2,8 +2,9 @@ function initHeroAnimation() {
   var title = document.getElementById('hero-title');
   if (!title) return;
 
+  if (typeof gsap === 'undefined') return;
+
   if (window.PortfolioUtils.prefersReducedMotion()) {
-    gsap.set(title, { opacity: 1 });
     return;
   }
 
@@ -25,6 +26,7 @@ function initHeroAnimation() {
 }
 
 function initScrollReveals() {
+  if (typeof gsap === 'undefined') return;
   if (window.PortfolioUtils.prefersReducedMotion()) return;
   if (typeof ScrollTrigger === 'undefined') return;
 
@@ -48,11 +50,11 @@ function initScrollReveals() {
 function initMarquee() {
   var track = document.querySelector('.marquee__track');
   if (!track) return;
+  if (typeof gsap === 'undefined') return;
   if (window.PortfolioUtils.prefersReducedMotion()) return;
 
-  var width = track.scrollWidth / 2;
   gsap.to(track, {
-    x: -width,
+    xPercent: -50,
     duration: 20,
     ease: 'none',
     repeat: -1
