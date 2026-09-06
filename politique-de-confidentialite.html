@@ -13,7 +13,7 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page introuvable — Ethan Bernier</title>
+  <title>Politique de confidentialité — Ethan Bernier</title>
   <meta name="robots" content="noindex">
   <meta name="theme-color" content="#131417">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -28,26 +28,41 @@
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
   <style>
-    .not-found {
-      min-height: calc(100vh - 76px);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      gap: var(--space-3);
+    .legal {
+      max-width: 760px;
+      margin-inline: auto;
       padding-block: var(--space-5);
     }
-    .not-found__code {
-      font-family: var(--font-display);
-      font-weight: 900;
-      font-size: clamp(4rem, 18vw, 10rem);
-      line-height: 0.9;
-      color: var(--color-accent);
+    .legal h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: var(--space-3);
     }
-    .not-found__text {
-      max-width: 40ch;
+    .legal h2 {
+      font-size: 1.3rem;
+      text-transform: none;
+      margin-top: var(--space-4);
+      margin-bottom: var(--space-1);
+    }
+    .legal p, .legal li {
       color: var(--color-muted);
+      line-height: 1.7;
+    }
+    .legal a {
+      color: var(--color-accent-3-text);
+      text-decoration: underline;
+    }
+    .legal ul {
+      list-style: disc;
+      padding-left: 1.2em;
+    }
+    .legal button.link-like {
+      background: none;
+      border: none;
+      padding: 0;
+      font: inherit;
+      color: var(--color-accent-3-text);
+      text-decoration: underline;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -61,12 +76,60 @@
     </nav>
   </header>
   <main id="main">
-    <section class="not-found" style="border-bottom:none;">
-      <div class="container not-found">
-        <p class="not-found__code">404</p>
-        <h1>Page introuvable</h1>
-        <p class="not-found__text">Cette page n'existe pas ou a été déplacée. Retourne à l'accueil pour découvrir le portfolio.</p>
-        <a class="btn btn--primary" href="index.html">Retour à l'accueil</a>
+    <section style="border-bottom:none;">
+      <div class="container legal">
+        <h1>Politique de confidentialité</h1>
+        <p>
+          Cette page explique quelles données sont collectées sur ce site, pourquoi, et
+          comment tu peux garder le contrôle dessus.
+        </p>
+
+        <h2>Qui est responsable ?</h2>
+        <p>
+          Ethan Bernier, éditeur de ce portfolio personnel — voir les
+          <a href="mentions-legales.html">mentions légales</a>. Pour toute question,
+          écris à <a href="mailto:ethan.bernier66@gmail.com">ethan.bernier66@gmail.com</a>.
+        </p>
+
+        <h2>Quelles données sont collectées ?</h2>
+        <p>
+          Ce site ne propose aucun formulaire ni compte utilisateur : les liens de contact
+          (email, téléphone) ouvrent directement ton client mail ou ton téléphone, sans
+          transiter par un serveur.
+        </p>
+        <p>
+          Avec ton consentement, ce site utilise <strong>Google Analytics</strong> pour
+          mesurer la fréquentation (pages visitées, provenance, appareil utilisé) de
+          manière anonymisée. Ces données sont traitées par Google et peuvent être
+          transférées hors de l'Union européenne. Voir la
+          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">politique de confidentialité de Google</a>.
+        </p>
+
+        <h2>Cookies</h2>
+        <p>
+          Un bandeau de consentement (Tarteaucitron) te permet d'accepter ou de refuser les
+          cookies de mesure d'audience à tout moment. Aucun cookie non essentiel n'est
+          déposé avant ton accord explicite.
+        </p>
+        <p>
+          Tu peux modifier ton choix à tout moment :
+          <button type="button" class="link-like" onclick="if (window.tarteaucitron) tarteaucitron.userInterface.openPanel();">
+            gérer mes préférences de cookies
+          </button>
+        </p>
+
+        <h2>Durée de conservation</h2>
+        <p>
+          Les données de mesure d'audience (si tu les acceptes) sont conservées 14 mois
+          maximum, conformément aux recommandations de la CNIL.
+        </p>
+
+        <h2>Tes droits</h2>
+        <p>
+          Conformément au RGPD, tu disposes d'un droit d'accès, de rectification et de
+          suppression des données te concernant. Pour l'exercer, écris à
+          <a href="mailto:ethan.bernier66@gmail.com">ethan.bernier66@gmail.com</a>.
+        </p>
       </div>
     </section>
   </main>

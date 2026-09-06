@@ -134,6 +134,10 @@
   <footer id="site-footer">
     <div class="container footer__inner">
       <p class="meta">© 2026 Ethan Bernier</p>
+      <nav class="footer__legal" aria-label="Liens légaux">
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="politique-de-confidentialite.html">Politique de confidentialité</a>
+      </nav>
     </div>
   </footer>
   <div class="marquee" aria-hidden="true">
@@ -181,5 +185,35 @@
     }
   </script>
   <script type="module" src="js/hero-3d.js"></script>
+
+  <!-- Bandeau de consentement cookies (RGPD) -->
+  <script src="https://cdn.jsdelivr.net/gh/AmauriC/tarteaucitron.js@1.34.0/tarteaucitron.min.js"></script>
+  <script>
+    tarteaucitron.init({
+      privacyUrl: 'politique-de-confidentialite.html',
+      hashtag: '#tarteaucitron',
+      cookieName: 'tarteaucitron',
+      orientation: 'bottom',
+      groupServices: false,
+      showAlertSmall: false,
+      cookieslist: true,
+      showIcon: true,
+      iconPosition: 'BottomRight',
+      adblocker: false,
+      DenyAllCta: true,
+      AcceptAllCta: true,
+      highPrivacy: true,
+      handleBrowserDNTRequest: false,
+      removeCredit: true,
+      moreInfoLink: true,
+      readmoreLink: 'mentions-legales.html',
+      mandatory: true,
+      mandatoryCta: true
+    });
+
+    /* Google tag (gtag.js) — chargé uniquement après consentement, via Tarteaucitron */
+    tarteaucitron.user.gtagUa = 'G-YB6ZV2N1CR';
+    (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+  </script>
 </body>
 </html>

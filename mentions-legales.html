@@ -13,7 +13,7 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page introuvable — Ethan Bernier</title>
+  <title>Mentions légales — Ethan Bernier</title>
   <meta name="robots" content="noindex">
   <meta name="theme-color" content="#131417">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -28,26 +28,32 @@
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
   <style>
-    .not-found {
-      min-height: calc(100vh - 76px);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      gap: var(--space-3);
+    .legal {
+      max-width: 760px;
+      margin-inline: auto;
       padding-block: var(--space-5);
     }
-    .not-found__code {
-      font-family: var(--font-display);
-      font-weight: 900;
-      font-size: clamp(4rem, 18vw, 10rem);
-      line-height: 0.9;
-      color: var(--color-accent);
+    .legal h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: var(--space-3);
     }
-    .not-found__text {
-      max-width: 40ch;
+    .legal h2 {
+      font-size: 1.3rem;
+      text-transform: none;
+      margin-top: var(--space-4);
+      margin-bottom: var(--space-1);
+    }
+    .legal p, .legal li {
       color: var(--color-muted);
+      line-height: 1.7;
+    }
+    .legal a {
+      color: var(--color-accent-3-text);
+      text-decoration: underline;
+    }
+    .legal ul {
+      list-style: disc;
+      padding-left: 1.2em;
     }
   </style>
 </head>
@@ -61,12 +67,39 @@
     </nav>
   </header>
   <main id="main">
-    <section class="not-found" style="border-bottom:none;">
-      <div class="container not-found">
-        <p class="not-found__code">404</p>
-        <h1>Page introuvable</h1>
-        <p class="not-found__text">Cette page n'existe pas ou a été déplacée. Retourne à l'accueil pour découvrir le portfolio.</p>
-        <a class="btn btn--primary" href="index.html">Retour à l'accueil</a>
+    <section style="border-bottom:none;">
+      <div class="container legal">
+        <h1>Mentions légales</h1>
+
+        <h2>Éditeur du site</h2>
+        <p>
+          Ce site est un portfolio personnel édité par Ethan Bernier, étudiant en
+          informatique (BUT, IUT de Bayonne et du Pays Basque).<br>
+          Contact : <a href="mailto:ethan.bernier66@gmail.com">ethan.bernier66@gmail.com</a>
+        </p>
+
+        <h2>Directeur de la publication</h2>
+        <p>Ethan Bernier.</p>
+
+        <h2>Hébergement</h2>
+        <p>
+          Ce site est hébergé par GitHub, Inc. — GitHub Pages<br>
+          88 Colin P Kelly Jr St, San Francisco, CA 94107, États-Unis<br>
+          <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">pages.github.com</a>
+        </p>
+
+        <h2>Propriété intellectuelle</h2>
+        <p>
+          L'ensemble des contenus de ce site (textes, mise en page, code source) est la
+          propriété d'Ethan Bernier, sauf mention contraire. Toute reproduction sans
+          autorisation est interdite.
+        </p>
+
+        <h2>Données personnelles et cookies</h2>
+        <p>
+          Pour tout ce qui concerne les données collectées et l'usage des cookies, voir la
+          <a href="politique-de-confidentialite.html">politique de confidentialité</a>.
+        </p>
       </div>
     </section>
   </main>

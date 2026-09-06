@@ -297,6 +297,23 @@
   padding-bottom: calc(var(--space-3) + 56px);
 }
 
+.footer__legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.footer__legal a {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-muted);
+  text-decoration: underline;
+}
+.footer__legal a:hover, .footer__legal a:focus-visible {
+  color: var(--color-fg);
+}
+
 .marquee {
   position: fixed;
   left: 0;
