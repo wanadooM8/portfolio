@@ -10,6 +10,7 @@ function buildProjectCard(project) {
     var img = document.createElement('img');
     img.src = project.image;
     img.alt = '';
+    img.loading = 'lazy';
     visual.appendChild(img);
   } else {
     var mark = document.createElement('span');
@@ -82,8 +83,10 @@ function initProjects() {
       projects.forEach(function (project) {
         grid.appendChild(buildProjectCard(project));
       });
+      grid.classList.remove('is-loading');
     })
     .catch(function (error) {
       console.error('Impossible de charger les projets :', error);
+      grid.classList.remove('is-loading');
     });
 }

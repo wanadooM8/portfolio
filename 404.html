@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('portfolio-theme');
+        if (stored === 'light' || stored === 'dark') {
+          document.documentElement.setAttribute('data-theme', stored);
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page introuvable — Ethan Bernier</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#131417">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    .not-found {
+      min-height: calc(100vh - 76px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: var(--space-3);
+      padding-block: var(--space-5);
+    }
+    .not-found__code {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(4rem, 18vw, 10rem);
+      line-height: 0.9;
+      color: var(--color-accent);
+    }
+    .not-found__text {
+      max-width: 40ch;
+      color: var(--color-muted);
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header">
+    <nav class="nav container" aria-label="Navigation principale">
+      <a class="nav__brand" href="index.html">EB<span class="nav__brand-mark" aria-hidden="true"></span></a>
+      <div class="nav__right">
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Activer le mode clair"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></button>
+      </div>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="not-found" style="border-bottom:none;">
+      <div class="container not-found">
+        <p class="not-found__code">404</p>
+        <h1>Page introuvable</h1>
+        <p class="not-found__text">Cette page n'existe pas ou a été déplacée. Retourne à l'accueil pour découvrir le portfolio.</p>
+        <a class="btn btn--primary" href="index.html">Retour à l'accueil</a>
+      </div>
+    </section>
+  </main>
+  <script src="js/utils.js"></script>
+  <script src="js/theme.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', initThemeToggle);
+  </script>
+</body>
+</html>

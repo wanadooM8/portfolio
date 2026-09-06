@@ -19,6 +19,9 @@ function renderAbout(data) {
   var img = document.createElement('img');
   img.src = data.photo;
   img.alt = data.photoAlt || '';
+  img.loading = 'lazy';
+  img.width = 520;
+  img.height = 488;
   img.addEventListener('error', function () {
     var fallback = document.createElement('div');
     fallback.className = 'avatar-fallback';
@@ -38,6 +41,8 @@ function renderAbout(data) {
   content.appendChild(interestsHeading);
 
   content.appendChild(buildTagList(data.interests, "Centres d'intérêt"));
+
+  content.classList.remove('is-loading');
 }
 
 function renderSkills(data) {
@@ -55,6 +60,8 @@ function renderSkills(data) {
 
     grid.appendChild(wrapper);
   });
+
+  grid.classList.remove('is-loading');
 }
 
 function renderTimeline(data) {
@@ -80,6 +87,8 @@ function renderTimeline(data) {
 
     list.appendChild(li);
   });
+
+  list.classList.remove('is-loading');
 }
 
 function renderContact(data) {
@@ -89,11 +98,13 @@ function renderContact(data) {
   var links = [
     { text: data.email, href: 'mailto:' + data.email, variant: 'primary' },
     { text: data.phone, href: 'tel:' + data.phone.replace(/\s+/g, ''), variant: 'ghost' },
-    { text: data.github.replace(/^https?:\/\//, ''), href: data.github, variant: 'ghost', external: true },
+    { text: data.github.replace(/^https?:\/\//, ''), href: data.github, variant: 'ghost', external: true, ariaLabel: 'Ouvrir le profil GitHub d\'Ethan Bernier (nouvel onglet)' },
+    { text: 'LinkedIn', href: data.linkedin, variant: 'ghost', external: true, ariaLabel: 'Ouvrir le profil LinkedIn d\'Ethan Bernier (nouvel onglet)' },
     { text: 'Télécharger mon CV', href: data.cvFile, variant: 'ghost', download: true }
   ];
 
   links.forEach(function (link) {
+    if (!link.href) return;
     var li = document.createElement('li');
     var a = document.createElement('a');
     a.className = 'btn btn--' + link.variant;
@@ -103,11 +114,13 @@ function renderContact(data) {
     if (link.external) {
       a.target = '_blank';
       a.rel = 'noopener noreferrer';
-      a.setAttribute('aria-label', 'Ouvrir le profil GitHub d\'Ethan Bernier (nouvel onglet)');
+      a.setAttribute('aria-label', link.ariaLabel);
     }
     li.appendChild(a);
     list.appendChild(li);
   });
+
+  list.classList.remove('is-loading');
 }
 
 function initContent() {
@@ -124,5 +137,8 @@ function initContent() {
     })
     .catch(function (error) {
       console.error('Impossible de charger le contenu :', error);
+      document.querySelectorAll('.is-loading').forEach(function (el) {
+        el.classList.remove('is-loading');
+      });
     });
 }

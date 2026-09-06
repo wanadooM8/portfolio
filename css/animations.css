@@ -1,3 +1,22 @@
+.is-loading {
+  min-height: 120px;
+  position: relative;
+  overflow: hidden;
+  background: rgba(128, 128, 128, 0.08);
+}
+.is-loading::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(128, 128, 128, 0.18), transparent);
+  background-size: 200% 100%;
+  animation: skeleton-sweep 1.4s ease-in-out infinite;
+}
+@keyframes skeleton-sweep {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .triforce-overlay {
     display: none !important;
