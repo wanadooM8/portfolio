@@ -48,16 +48,36 @@ function initScrollReveals() {
   ScrollTrigger.refresh();
 }
 
+function fillMarqueeTrack(container, track) {
+  var seed = track.innerHTML;
+  var guard = 0;
+  while (track.scrollWidth < container.clientWidth * 2 && guard < 20) {
+    track.insertAdjacentHTML('beforeend', seed);
+    guard += 1;
+  }
+}
+
 function initMarquee() {
+  var container = document.querySelector('.marquee');
   var track = document.querySelector('.marquee__track');
-  if (!track) return;
+  if (!container || !track) return;
+
+  var PIXELS_PER_SECOND = 22;
+
+  fillMarqueeTrack(container, track);
+
   if (typeof gsap === 'undefined') return;
   if (window.PortfolioUtils.prefersReducedMotion()) return;
 
-  gsap.to(track, {
+  var tween = gsap.to(track, {
     xPercent: -50,
-    duration: 20,
+    duration: (track.scrollWidth / 2) / PIXELS_PER_SECOND,
     ease: 'none',
     repeat: -1
+  });
+
+  window.addEventListener('resize', function () {
+    fillMarqueeTrack(container, track);
+    tween.duration((track.scrollWidth / 2) / PIXELS_PER_SECOND);
   });
 }
