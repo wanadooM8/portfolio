@@ -64,7 +64,7 @@
   right: var(--space-2);
   bottom: 10px;
   height: 2px;
-  background: var(--color-fg);
+  background: var(--color-accent-2);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform var(--transition-fast);
@@ -89,6 +89,14 @@
   justify-content: center;
   gap: var(--space-2);
   min-width: 0;
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-self: flex-start;
+  border: var(--border-width) solid var(--color-accent-3);
+  color: var(--color-accent-3-text);
+  padding: 6px var(--space-2);
 }
 
 .hero__3d {
@@ -246,6 +254,15 @@
 .contact__links .btn--ghost:hover, .contact__links .btn--ghost:focus-visible {
   background: var(--color-accent-fg);
   color: var(--color-accent);
+}
+
+#site-footer {
+  --color-bg: #131417;
+  --color-fg: #FAFAFA;
+  --color-border: #46464E;
+  --color-focus: var(--color-accent);
+  background: var(--color-bg);
+  color: var(--color-fg);
 }
 
 .footer__inner {
