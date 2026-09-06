@@ -14,7 +14,7 @@ function initHeroAnimation() {
   }
 
   gsap.registerPlugin(SplitText);
-  var split = new SplitText(title, { type: 'chars' });
+  var split = new SplitText(title, { type: 'words, chars' });
   gsap.from(split.chars, {
     opacity: 0,
     y: 20,
@@ -45,6 +45,7 @@ function initScrollReveals() {
       }
     });
   });
+  ScrollTrigger.refresh();
 }
 
 function initMarquee() {

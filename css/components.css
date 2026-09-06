@@ -19,6 +19,7 @@
 .btn--primary:hover, .btn--primary:focus-visible {
   background: var(--color-fg);
   border-color: var(--color-fg);
+  color: var(--color-bg);
 }
 
 .btn--ghost {
@@ -31,16 +32,35 @@
 }
 
 .avatar {
+  position: relative;
   width: 200px;
   height: 200px;
   border: var(--border-width) solid var(--color-fg);
+  background: var(--color-bg);
+}
+.avatar::before, .avatar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: var(--border-width) solid var(--color-fg);
+  z-index: -1;
+}
+.avatar::before {
+  background: var(--color-accent-2);
+  transform: translate(-16px, 16px) rotate(-6deg);
+}
+.avatar::after {
+  background: var(--color-accent-3);
+  transform: translate(16px, -16px) rotate(6deg);
 }
 .avatar img {
+  position: relative;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 .avatar-fallback {
+  position: relative;
   width: 100%;
   height: 100%;
   display: flex;
@@ -62,13 +82,30 @@
   padding: 4px var(--space-1);
 }
 
+.tag--category {
+  border-width: var(--border-width);
+  border-style: solid;
+  font-weight: 700;
+}
+.tag--category.tag--pro {
+  background: var(--color-accent-2);
+  border-color: var(--color-accent-2);
+  color: var(--color-accent-2-fg);
+}
+.tag--category.tag--study {
+  background: var(--color-accent-3);
+  border-color: var(--color-accent-3);
+  color: var(--color-accent-3-fg);
+}
+
 .card {
   border: var(--border-width) solid var(--color-fg);
+  box-shadow: var(--shadow-offset);
   padding: var(--space-3);
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
-  transition: background var(--transition-fast), color var(--transition-fast);
+  transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
 }
 .card:hover, .card:focus-within {
   background: var(--color-accent);
@@ -76,6 +113,62 @@
 }
 .card:hover .tag, .card:focus-within .tag {
   border-color: var(--color-accent-fg);
+}
+
+.card__visual {
+  aspect-ratio: 16 / 9;
+  border: var(--border-width) solid var(--color-fg);
+  overflow: hidden;
+  background:
+    repeating-linear-gradient(135deg, var(--color-bg-raised) 0 12px, transparent 12px 24px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card__visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card__visual-mark {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  color: var(--color-border);
+}
+
+.card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.card__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border: var(--border-width) solid currentColor;
+  color: inherit;
+  flex-shrink: 0;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+.card__link svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+}
+.card__link:hover, .card__link:focus-visible {
+  background: currentColor;
+}
+.card__link:hover svg, .card__link:focus-visible svg {
+  stroke: var(--color-bg);
+}
+.card:hover .card__link:hover svg, .card:hover .card__link:focus-visible svg {
+  stroke: var(--color-accent);
 }
 
 .theme-toggle,
@@ -89,7 +182,6 @@
   border-radius: var(--radius);
   background: transparent;
   color: var(--color-fg);
-  font-size: 1.1rem;
   line-height: 1;
   cursor: pointer;
   transition: background var(--transition-fast), color var(--transition-fast);
@@ -100,13 +192,19 @@
   color: var(--color-bg);
 }
 
+.theme-toggle svg,
+.nav__toggle svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+  transition: transform 200ms ease;
+}
+.theme-toggle:hover svg {
+  transform: rotate(-14deg);
+}
+
 .nav__toggle {
   display: none;
-}
-.nav__toggle svg {
-  width: 24px;
-  height: 24px;
-  stroke: currentColor;
 }
 
 .triforce-overlay {
@@ -130,7 +228,7 @@
     display: inline-flex;
   }
   .nav__links {
-    display: none;
+    display: flex;
     position: absolute;
     top: 100%;
     left: 0;
@@ -140,9 +238,17 @@
     background: var(--color-bg);
     border-top: var(--border-width) solid var(--color-border);
     padding: var(--space-2);
+    opacity: 0;
+    transform: translateY(-8px);
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity var(--transition-fast), transform var(--transition-fast), visibility var(--transition-fast);
   }
   .nav__links.is-open {
-    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    pointer-events: auto;
   }
   .nav__links a {
     width: 100%;

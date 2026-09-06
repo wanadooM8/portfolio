@@ -30,7 +30,7 @@
   <a class="skip-link" href="#main">Aller au contenu</a>
   <header id="site-header">
     <nav class="nav container" aria-label="Navigation principale">
-      <a class="nav__brand" href="#hero">EB</a>
+      <a class="nav__brand" href="#hero">EB<span class="nav__brand-mark" aria-hidden="true"></span></a>
       <div class="nav__right">
         <ul class="nav__links" id="nav-links">
           <li><a href="#about">À propos</a></li>
@@ -39,7 +39,7 @@
           <li><a href="#timeline">Parcours</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Activer le mode clair">☀</button>
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Activer le mode clair"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></button>
         <button type="button" class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Ouvrir le menu">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="3">
             <path stroke-linecap="square" stroke-linejoin="miter" d="M4 6h16M4 12h16M4 18h16"/>
@@ -51,175 +51,56 @@
   <main id="main">
     <section id="hero">
       <div class="container hero__inner">
-        <p class="label">Étudiant en informatique — BUT, IUT Bayonne</p>
-        <h1 id="hero-title">Ethan Bernier</h1>
-        <p class="hero__tagline">Curieux. Autonome. Prêt à coder pour votre équipe.</p>
-        <div class="hero__cta">
-          <a class="btn btn--primary" href="#projects">Voir mes projets</a>
-          <a class="btn btn--ghost" href="assets/cv.pdf" download>Télécharger mon CV</a>
+        <div class="hero__text">
+          <p class="label">Étudiant en informatique — BUT, IUT Bayonne</p>
+          <h1 id="hero-title">Ethan Bernier</h1>
+          <p class="hero__tagline">Curieux. Autonome. Prêt à coder pour votre équipe.</p>
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#projects">Voir mes projets</a>
+            <a class="btn btn--ghost" href="assets/cv.pdf" download>Télécharger mon CV</a>
+          </div>
         </div>
+        <div class="hero__3d" id="hero-3d" aria-hidden="true"></div>
       </div>
     </section>
     <section id="about">
       <div class="container about__grid reveal">
-        <div class="avatar" aria-hidden="false">
-          <img src="assets/profile.jpg" alt="Photo d'Ethan Bernier"
-               onerror="this.replaceWith(Object.assign(document.createElement('div'), {className: 'avatar-fallback', textContent: 'EB'}))">
-        </div>
+        <div class="avatar" id="about-avatar" aria-hidden="false"></div>
         <div class="about__content">
+          <p class="section-index" aria-hidden="true">01</p>
           <h2>À propos</h2>
-          <p>
-            Étudiant en informatique, je suis passionné par les nouvelles technologies.
-            Curieux et autonome, j'ai développé des compétences en développement web,
-            en data analyse avec Python et en gestion de bases de données en SQL.
-            Je recherche actuellement un stage pour mettre mes connaissances en
-            pratique et apporter à votre entreprise un regard neuf, ainsi qu'une contribution motivée
-            et sérieuse.
-          </p>
-          <ul class="tag-list" aria-label="Soft skills">
-            <li class="tag">Travail d'équipe</li>
-            <li class="tag">Curiosité</li>
-            <li class="tag">Adaptabilité</li>
-          </ul>
-          <h3>En dehors du code</h3>
-          <ul class="tag-list" aria-label="Centres d'intérêt">
-            <li class="tag">Course à pied, ski, randonnée, vélo</li>
-            <li class="tag">Dessin, peinture sur figurines</li>
-            <li class="tag">Zelda, Cyberpunk</li>
-            <li class="tag">Jeux de société</li>
-          </ul>
+          <div id="about-content"></div>
         </div>
       </div>
     </section>
     <section id="projects">
       <div class="container reveal">
+        <p class="section-index" aria-hidden="true">02</p>
         <h2>Projets</h2>
         <div class="projects__grid">
-          <article class="card">
-            <p class="meta">2026 — Association Autonomia 64</p>
-            <h3>Portail Web & CRM</h3>
-            <p>
-              Stage développeur web : analyse des besoins fonctionnels, développement
-              d'un portail administrable avec Laravel et Filament, intervention sur
-              tout le cycle (analyse, conception, développement, tests, mise en
-              production).
-            </p>
-            <ul class="tag-list" aria-label="Compétences utilisées">
-              <li class="tag">Laravel</li>
-              <li class="tag">Filament</li>
-              <li class="tag">PHP</li>
-              <li class="tag">JavaScript</li>
-              <li class="tag">HTML/CSS</li>
-              <li class="tag">MySQL</li>
-              <li class="tag">Git</li>
-              <li class="tag">Figma</li>
-            </ul>
-          </article>
-          <article class="card">
-            <p class="meta">2025 — UPPA</p>
-            <h3>Réseau social Yujo</h3>
-            <p>
-              Développement en équipe, méthode agile, d'une application web centrée
-              sur des rooms virtuelles personnalisables.
-            </p>
-            <ul class="tag-list" aria-label="Compétences utilisées">
-              <li class="tag">HTML</li>
-              <li class="tag">PHP</li>
-              <li class="tag">CSS</li>
-              <li class="tag">SQL</li>
-              <li class="tag">Gestion de projet</li>
-              <li class="tag">Figma</li>
-            </ul>
-          </article>
+          <noscript>Active JavaScript pour afficher les projets.</noscript>
         </div>
       </div>
     </section>
     <section id="skills">
       <div class="container reveal">
+        <p class="section-index" aria-hidden="true">03</p>
         <h2>Compétences</h2>
-        <div class="skills__grid">
-          <div class="skills__group">
-            <h3>Programmation</h3>
-            <ul class="tag-list">
-              <li class="tag">C++</li>
-              <li class="tag">Python</li>
-              <li class="tag">Java</li>
-            </ul>
-          </div>
-          <div class="skills__group">
-            <h3>Développement web</h3>
-            <ul class="tag-list">
-              <li class="tag">HTML</li>
-              <li class="tag">CSS</li>
-              <li class="tag">JavaScript</li>
-              <li class="tag">PHP</li>
-            </ul>
-          </div>
-          <div class="skills__group">
-            <h3>Bases de données</h3>
-            <ul class="tag-list">
-              <li class="tag">MySQL</li>
-              <li class="tag">Oracle</li>
-            </ul>
-          </div>
-          <div class="skills__group">
-            <h3>Outils</h3>
-            <ul class="tag-list">
-              <li class="tag">Git</li>
-              <li class="tag">Figma</li>
-            </ul>
-          </div>
-          <div class="skills__group">
-            <h3>Langues</h3>
-            <ul class="tag-list">
-              <li class="tag">Français — C1</li>
-              <li class="tag">English — B1</li>
-            </ul>
-          </div>
-        </div>
+        <div class="skills__grid" id="skills-grid"></div>
       </div>
     </section>
     <section id="timeline">
       <div class="container reveal">
+        <p class="section-index" aria-hidden="true">04</p>
         <h2>Parcours</h2>
-        <ol class="timeline">
-          <li class="timeline__item">
-            <span class="meta">2020 – 2024</span>
-            <h3>Baccalauréat général</h3>
-            <p>Lycée Saint-John-Perse, Pau — Spécialités Mathématiques, Physique-Chimie, option Mathématiques expertes.</p>
-          </li>
-          <li class="timeline__item">
-            <span class="meta">2022</span>
-            <h3>Brevet d'initiation aéronautique (BIA)</h3>
-            <p>Lycée Louis-Barthou, Pau.</p>
-          </li>
-          <li class="timeline__item">
-            <span class="meta">2025</span>
-            <h3>Réseau social Yujo</h3>
-            <p>Projet d'équipe, UPPA — voir la section Projets.</p>
-          </li>
-          <li class="timeline__item">
-            <span class="meta">2025 – 2027</span>
-            <h3>Bachelor universitaire de technologies en informatique</h3>
-            <p>IUT de Bayonne et du Pays Basque, Anglet.</p>
-          </li>
-          <li class="timeline__item">
-            <span class="meta">2026</span>
-            <h3>Stage Développeur Web & CRM</h3>
-            <p>Association Autonomia 64, Puyoô — voir la section Projets.</p>
-          </li>
-        </ol>
+        <ol class="timeline" id="timeline-list"></ol>
       </div>
     </section>
     <section id="contact">
       <div class="container contact__grid reveal">
+        <p class="section-index" aria-hidden="true">05</p>
         <h2>Contact</h2>
-        <ul class="contact__links">
-          <li><a class="btn btn--primary" href="mailto:ethan.bernier66@gmail.com">ethan.bernier66@gmail.com</a></li>
-          <li><a class="btn btn--ghost" href="tel:+33769770364">+33 7 69 77 03 64</a></li>
-          <li><a class="btn btn--ghost" href="https://github.com/wanadooM8" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir le profil GitHub d'Ethan Bernier (nouvel onglet)">github.com/wanadooM8</a></li>
-          <li><a class="btn btn--ghost" href="assets/cv.pdf" download>Télécharger mon CV</a></li>
-        </ul>
+        <ul class="contact__links" id="contact-links"></ul>
       </div>
     </section>
   </main>
@@ -249,6 +130,17 @@
   <script src="js/theme.js"></script>
   <script src="js/easter-egg.js"></script>
   <script src="js/animations.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/content.js"></script>
   <script src="js/main.js"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.185.1/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.185.1/examples/jsm/"
+      }
+    }
+  </script>
+  <script type="module" src="js/hero-3d.js"></script>
 </body>
 </html>

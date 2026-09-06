@@ -2,8 +2,8 @@ body {
   background: var(--color-bg);
   color: var(--color-fg);
   font-family: var(--font-display);
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 1.6;
 }
 
 h1, h2, h3 {
@@ -14,14 +14,31 @@ h1, h2, h3 {
   line-height: 0.95;
 }
 
-h1 { font-size: clamp(2.5rem, 8vw, 6rem); font-weight: 900; }
-h2 { font-size: clamp(2rem, 5vw, 3.5rem); }
-h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); }
+h1 { font-size: clamp(2.5rem, 7vw, 5.5rem); font-weight: 900; word-break: keep-all; overflow-wrap: normal; }
+h2 { font-size: clamp(2.25rem, 5.5vw, 4rem); }
+h3 { font-size: clamp(1.4rem, 3.2vw, 1.9rem); }
 
 .meta, .tag, time, .label {
   font-family: var(--font-mono);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+}
+
+.section-index {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-1);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-accent-3-text);
+  margin-bottom: var(--space-1);
+}
+.section-index::after {
+  content: '';
+  flex: 1;
+  height: var(--border-width);
+  background: var(--color-border);
+  margin-left: var(--space-1);
 }
 
 .container {

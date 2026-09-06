@@ -1,0 +1,24 @@
+[
+  {
+    "id": "autonomia64",
+    "year": "2026",
+    "org": "Association Autonomia 64",
+    "title": "Portail Web & CRM",
+    "description": "Stage développeur web : analyse des besoins fonctionnels, développement d'un portail administrable avec Laravel et Filament, intervention sur tout le cycle (analyse, conception, développement, tests, mise en production).",
+    "category": { "label": "Stage", "type": "pro" },
+    "stack": ["Laravel", "Filament", "PHP", "JavaScript", "HTML/CSS", "MySQL", "Git", "Figma"],
+    "link": null,
+    "image": null
+  },
+  {
+    "id": "yujo",
+    "year": "2025",
+    "org": "UPPA",
+    "title": "Réseau social Yujo",
+    "description": "Développement en équipe, méthode agile, d'une application web centrée sur des rooms virtuelles personnalisables.",
+    "category": { "label": "Projet étudiant", "type": "study" },
+    "stack": ["HTML", "PHP", "CSS", "SQL", "Gestion de projet", "Figma"],
+    "link": null,
+    "image": null
+  }
+]

@@ -59,6 +59,6 @@ document.addEventListener('DOMContentLoaded', function () {
   initMobileNav();
   initEasterEgg();
   initHeroAnimation();
-  initScrollReveals();
   initMarquee();
+  Promise.all([initProjects(), initContent()]).then(initScrollReveals);
 });

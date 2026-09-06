@@ -1,0 +1,57 @@
+{
+  "about": {
+    "photo": "assets/profile.jpg",
+    "photoAlt": "Photo d'Ethan Bernier",
+    "bio": "Étudiant en informatique, je suis passionné par les nouvelles technologies. Curieux et autonome, j'ai développé des compétences en développement web, en data analyse avec Python et en gestion de bases de données en SQL. Je recherche actuellement un stage pour mettre mes connaissances en pratique et apporter à votre entreprise un regard neuf, ainsi qu'une contribution motivée et sérieuse.",
+    "softSkills": ["Travail d'équipe", "Curiosité", "Adaptabilité"],
+    "interestsHeading": "En dehors du code",
+    "interests": [
+      "Course à pied, ski, randonnée, vélo",
+      "Dessin, peinture sur figurines",
+      "Zelda, Cyberpunk",
+      "Jeux de société"
+    ]
+  },
+  "skills": {
+    "groups": [
+      { "title": "Programmation", "items": ["C++", "Python", "Java"] },
+      { "title": "Développement web", "items": ["HTML", "CSS", "JavaScript", "PHP"] },
+      { "title": "Bases de données", "items": ["MySQL", "Oracle"] },
+      { "title": "Outils", "items": ["Git", "Figma"] },
+      { "title": "Langues", "items": ["Français — C1", "English — B1"] }
+    ]
+  },
+  "timeline": [
+    {
+      "date": "2020 – 2024",
+      "title": "Baccalauréat général",
+      "description": "Lycée Saint-John-Perse, Pau — Spécialités Mathématiques, Physique-Chimie, option Mathématiques expertes."
+    },
+    {
+      "date": "2022",
+      "title": "Brevet d'initiation aéronautique (BIA)",
+      "description": "Lycée Louis-Barthou, Pau."
+    },
+    {
+      "date": "2025",
+      "title": "Réseau social Yujo",
+      "description": "Projet d'équipe, UPPA — voir la section Projets."
+    },
+    {
+      "date": "2025 – 2027",
+      "title": "Bachelor universitaire de technologies en informatique",
+      "description": "IUT de Bayonne et du Pays Basque, Anglet."
+    },
+    {
+      "date": "2026",
+      "title": "Stage Développeur Web & CRM",
+      "description": "Association Autonomia 64, Puyoô — voir la section Projets."
+    }
+  ],
+  "contact": {
+    "email": "ethan.bernier66@gmail.com",
+    "phone": "+33 7 69 77 03 64",
+    "github": "https://github.com/wanadooM8",
+    "cvFile": "assets/cv.pdf"
+  }
+}
