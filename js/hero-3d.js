@@ -1,15 +1,23 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
+function announceHero3DSettled() {
+  document.dispatchEvent(new Event('hero3d:settled'));
+}
+
 function initHero3D() {
   var container = document.getElementById('hero-3d');
-  if (!container) return;
+  if (!container) {
+    announceHero3DSettled();
+    return;
+  }
 
   var renderer;
   try {
     renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
   } catch (error) {
     container.hidden = true;
+    announceHero3DSettled();
     return;
   }
 
@@ -90,6 +98,7 @@ function initHero3D() {
 
       var reducedMotion = window.PortfolioUtils && window.PortfolioUtils.prefersReducedMotion();
       if (reducedMotion || typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+        announceHero3DSettled();
         return;
       }
 
@@ -107,11 +116,13 @@ function initHero3D() {
           render();
         }
       });
+      announceHero3DSettled();
     },
     undefined,
     function (error) {
       console.error('Impossible de charger le modèle 3D :', error);
       container.hidden = true;
+      announceHero3DSettled();
     }
   );
 }

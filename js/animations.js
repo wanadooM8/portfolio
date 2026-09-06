@@ -25,8 +25,8 @@ function initHeroAnimation() {
   });
 }
 
-var REVEAL_WRAPPER_SELECTOR = '.projects__grid, .skills__grid, .timeline-wrap, .timeline, .contact__links, .about__content, #about-content';
-var REVEAL_SKIP_SELECTOR = '.timeline__line';
+var REVEAL_WRAPPER_SELECTOR = '.projects__grid, .skills__grid, .contact__links, .about__content, #about-content';
+var REVEAL_SKIP_SELECTOR = '.timeline-wrap';
 
 function revealTargets(el) {
   function expand(nodes) {
@@ -52,25 +52,36 @@ function initScrollReveals() {
   if (typeof ScrollTrigger === 'undefined') return;
 
   gsap.registerPlugin(ScrollTrigger);
+  var tweens = [];
   document.querySelectorAll('.reveal').forEach(function (el) {
-    gsap.from(revealTargets(el), {
+    tweens.push(gsap.from(revealTargets(el), {
       opacity: 0,
-      y: 24,
-      duration: 0.5,
-      stagger: 0.06,
+      y: 32,
+      duration: 0.6,
+      stagger: 0.08,
       ease: 'power2.out',
       scrollTrigger: {
         trigger: el,
-        start: 'top 85%',
+        start: 'top 70%',
         toggleActions: 'play none none reverse'
       }
-    });
+    }));
   });
   ScrollTrigger.refresh();
+  // Si le seuil de déclenchement est déjà derrière la position de scroll
+  // initiale (ex. section juste après un Hero plus court que 85% de l'écran),
+  // toggleActions ne se déclenchera jamais car il réagit à un franchissement
+  // de scroll, pas à un état déjà atteint : on affiche alors directement le résultat final.
+  tweens.forEach(function (tween) {
+    if (tween.scrollTrigger && tween.scrollTrigger.progress > 0) {
+      tween.progress(1);
+    }
+  });
 }
 
 function initTimelineLine() {
   var line = document.querySelector('.timeline__line');
+  var items = document.querySelectorAll('.timeline__item');
   if (!line || typeof gsap === 'undefined') return;
 
   if (window.PortfolioUtils.prefersReducedMotion() || typeof ScrollTrigger === 'undefined') {
@@ -90,6 +101,24 @@ function initTimelineLine() {
       scrub: true
     }
   });
+
+  // Chaque item s'illumine au fil du scroll, synchronisé avec la ligne qui
+  // grandit — un scrub par item (plutôt qu'une seule animation pour tout le
+  // bloc) pour que ça reste visible quel que soit le nombre d'entrées.
+  items.forEach(function (item) {
+    gsap.set(item, { opacity: 0.15, x: -16 });
+    gsap.to(item, {
+      opacity: 1,
+      x: 0,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: item,
+        start: 'top 85%',
+        end: 'top 55%',
+        scrub: true
+      }
+    });
+  });
 }
 
 function initCardTilt() {
@@ -98,9 +127,9 @@ function initCardTilt() {
   if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
 
   document.querySelectorAll('.projects__grid .card').forEach(function (card) {
-    gsap.set(card, { rotateX: 0, rotateY: 0 });
-    var setRotateX = gsap.quickTo(card, 'rotateX', { duration: 0.4, ease: 'power3.out' });
-    var setRotateY = gsap.quickTo(card, 'rotateY', { duration: 0.4, ease: 'power3.out' });
+    gsap.set(card, { rotationX: 0, rotationY: 0 });
+    var setRotateX = gsap.quickTo(card, 'rotationX', { duration: 0.4, ease: 'power3.out' });
+    var setRotateY = gsap.quickTo(card, 'rotationY', { duration: 0.4, ease: 'power3.out' });
 
     card.addEventListener('mousemove', function (event) {
       var rect = card.getBoundingClientRect();

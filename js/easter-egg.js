@@ -16,10 +16,20 @@ function playSecretChime() {
   });
 }
 
+function logKonamiHint() {
+  console.log(
+    '%c👀 Un·e développeur·se curieux·se par ici ?%c\nEssayez : ↑ ↑ ↓ ↓ ← → ← → B A',
+    'color:#DFE104;background:#131417;font-weight:bold;font-size:13px;padding:2px 6px;',
+    'color:#3452E0;font-family:monospace;font-size:13px;'
+  );
+}
+
 function initEasterEgg() {
   var SEQUENCE = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
   var buffer = [];
   var overlay = document.getElementById('triforce-overlay');
+
+  logKonamiHint();
 
   document.addEventListener('keydown', function (event) {
     buffer.push(event.key);

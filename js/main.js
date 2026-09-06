@@ -70,6 +70,22 @@ function initMobileNav() {
   });
 }
 
+function whenHero3DSettled(callback) {
+  var done = false;
+  function fire() {
+    if (done) return;
+    done = true;
+    callback();
+  }
+  // hero-3d.js charge son modèle en asynchrone et peut épingler le Hero
+  // (ScrollTrigger + pin), ce qui décale la mise en page. On attend ce
+  // signal pour créer les autres ScrollTrigger sur des positions définitives
+  // — un filet de sécurité évite de rester bloqué si hero-3d.js ne répond
+  // jamais (ex. Three.js indisponible).
+  document.addEventListener('hero3d:settled', fire, { once: true });
+  window.setTimeout(fire, 2500);
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   initSmoothNav();
   initThemeToggle();
@@ -78,8 +94,10 @@ document.addEventListener('DOMContentLoaded', function () {
   initHeroAnimation();
   initMarquee();
   Promise.all([initProjects(), initContent()]).then(function () {
-    initScrollReveals();
-    initTimelineLine();
-    initCardTilt();
+    whenHero3DSettled(function () {
+      initScrollReveals();
+      initTimelineLine();
+      initCardTilt();
+    });
   });
 });
