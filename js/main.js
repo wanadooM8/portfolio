@@ -5,11 +5,28 @@ function initSmoothNav() {
       var target = document.getElementById(targetId);
       if (!target) return;
       event.preventDefault();
-      target.scrollIntoView({ behavior: window.PortfolioUtils.prefersReducedMotion() ? 'auto' : 'smooth', block: 'start' });
-      if (!target.hasAttribute('tabindex')) {
-        target.setAttribute('tabindex', '-1');
+
+      function focusTarget() {
+        if (!target.hasAttribute('tabindex')) {
+          target.setAttribute('tabindex', '-1');
+        }
+        target.focus({ preventScroll: true });
       }
-      target.focus({ preventScroll: true });
+
+      var reducedMotion = window.PortfolioUtils.prefersReducedMotion();
+      if (reducedMotion || typeof gsap === 'undefined' || typeof ScrollToPlugin === 'undefined') {
+        target.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
+        focusTarget();
+        return;
+      }
+
+      gsap.registerPlugin(ScrollToPlugin);
+      gsap.to(window, {
+        scrollTo: { y: target, offsetY: 0 },
+        duration: 1,
+        ease: 'power2.inOut',
+        onComplete: focusTarget
+      });
     });
   });
 }
@@ -60,5 +77,9 @@ document.addEventListener('DOMContentLoaded', function () {
   initEasterEgg();
   initHeroAnimation();
   initMarquee();
-  Promise.all([initProjects(), initContent()]).then(initScrollReveals);
+  Promise.all([initProjects(), initContent()]).then(function () {
+    initScrollReveals();
+    initTimelineLine();
+    initCardTilt();
+  });
 });

@@ -21,6 +21,15 @@
   border-color: var(--color-fg);
   color: var(--color-bg);
 }
+.btn--primary::after {
+  content: '→';
+  display: inline-block;
+  margin-left: var(--space-1);
+  transition: transform var(--transition-fast);
+}
+.btn--primary:hover::after, .btn--primary:focus-visible::after {
+  transform: translateX(4px);
+}
 
 .btn--ghost {
   background: transparent;
