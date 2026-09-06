@@ -1,19 +1,12 @@
-function playSecretChime() {
-  if (typeof window.AudioContext === 'undefined' && typeof window.webkitAudioContext === 'undefined') return;
-  var Ctx = window.AudioContext || window.webkitAudioContext;
-  var ctx = new Ctx();
-  var notes = [659.25, 783.99, 987.77];
-  notes.forEach(function (freq, index) {
-    var osc = ctx.createOscillator();
-    var gain = ctx.createGain();
-    osc.type = 'triangle';
-    osc.frequency.value = freq;
-    gain.gain.setValueAtTime(0.15, ctx.currentTime + index * 0.12);
-    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + index * 0.12 + 0.3);
-    osc.connect(gain).connect(ctx.destination);
-    osc.start(ctx.currentTime + index * 0.12);
-    osc.stop(ctx.currentTime + index * 0.12 + 0.3);
-  });
+var zeldaTheme = null;
+
+function getZeldaTheme() {
+  if (!zeldaTheme) {
+    zeldaTheme = new Audio(encodeURI('assets/12 - Zelda Main Theme Song.mp3'));
+    zeldaTheme.loop = true;
+    zeldaTheme.volume = 0.4;
+  }
+  return zeldaTheme;
 }
 
 function logKonamiHint() {
@@ -43,7 +36,16 @@ function initEasterEgg() {
   });
 
   function triggerEasterEgg() {
-    playSecretChime();
+    var music = getZeldaTheme();
+
+    if (!music.paused) {
+      music.pause();
+      return;
+    }
+
+    music.currentTime = 0;
+    music.play().catch(function () {});
+
     if (window.PortfolioUtils.prefersReducedMotion()) return;
     overlay.hidden = false;
     overlay.classList.add('triforce-overlay--visible');
