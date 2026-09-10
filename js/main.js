@@ -115,7 +115,20 @@ function whenHero3DSettled(callback) {
   // signal pour créer les autres ScrollTrigger sur des positions définitives
   // — un filet de sécurité évite de rester bloqué si hero-3d.js ne répond
   // jamais (ex. Three.js indisponible).
-  document.addEventListener('hero3d:settled', fire, { once: true });
+  document.addEventListener('hero3d:settled', function () {
+    if (!done) {
+      fire();
+      return;
+    }
+    // Le filet de sécurité a déjà déclenché callback() avant que le modèle
+    // 3D ne finisse de charger (connexion lente) : le pin du Hero vient
+    // d'apparaître et a décalé tout le contenu sous le Hero. Un simple
+    // ScrollTrigger.refresh() ne recalcule pas les positions déjà figées
+    // des reveals existants, donc on les détruit et on les reconstruit sur
+    // la mise en page définitive pour éviter qu'ils restent bloqués invisibles.
+    killScrollAnimations();
+    callback();
+  }, { once: true });
   window.setTimeout(fire, 2500);
 }
 

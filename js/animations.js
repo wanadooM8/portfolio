@@ -9,6 +9,20 @@ function killScrollAnimations() {
   });
 }
 
+// Si l'onglet est en arriere-plan pendant l'animation d'entree, le
+// navigateur suspend requestAnimationFrame et le tween GSAP peut rester
+// fige a mi-chemin (titre en partie invisible/pivote) indefiniment : on
+// force l'etat final des le retour au premier plan pour ne jamais laisser
+// le contenu bloque.
+function forceTweenOnVisible(tween) {
+  function onVisible() {
+    if (document.visibilityState !== 'visible') return;
+    tween.progress(1);
+    document.removeEventListener('visibilitychange', onVisible);
+  }
+  document.addEventListener('visibilitychange', onVisible);
+}
+
 function initHeroAnimation() {
   var title = document.getElementById('hero-title');
   if (!title) return;
@@ -20,20 +34,20 @@ function initHeroAnimation() {
   }
 
   if (typeof SplitText === 'undefined') {
-    gsap.from(title, { opacity: 0, y: 20, duration: 0.6, ease: 'power2.out' });
+    forceTweenOnVisible(gsap.from(title, { opacity: 0, y: 20, duration: 0.6, ease: 'power2.out' }));
     return;
   }
 
   gsap.registerPlugin(SplitText);
   var split = new SplitText(title, { type: 'words, chars' });
-  gsap.from(split.chars, {
+  forceTweenOnVisible(gsap.from(split.chars, {
     opacity: 0,
     y: 20,
     rotateX: -40,
     duration: 0.6,
     stagger: 0.02,
     ease: 'expo.out'
-  });
+  }));
 }
 
 var REVEAL_WRAPPER_SELECTOR = '.projects__grid, .skills__grid, .contact__links, .about__content, #about-content';

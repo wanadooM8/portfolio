@@ -103,11 +103,17 @@ function initHero3D() {
       }
 
       gsap.registerPlugin(ScrollTrigger);
+      // Sous 901px, le Hero (texte + modèle empilés) dépasse largement la
+      // hauteur d'un écran de téléphone : épingler la section masquerait le
+      // modèle sous le bas de l'écran pendant toute la durée du pin, sans
+      // jamais pouvoir le faire défiler jusqu'à la vue. On garde la rotation
+      // pilotée par le scroll mais sans figer la page sur mobile.
+      var canPin = window.matchMedia('(min-width: 901px)').matches;
       ScrollTrigger.create({
         trigger: '#hero',
         start: 'top top',
         end: '+=80%',
-        pin: true,
+        pin: canPin,
         scrub: true,
         onUpdate: function (self) {
           var p = self.progress;

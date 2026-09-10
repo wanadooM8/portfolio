@@ -160,6 +160,7 @@
 @media (max-width: 767px) {
   .about__grid {
     grid-template-columns: 1fr;
+    justify-items: center;
   }
 }
 
