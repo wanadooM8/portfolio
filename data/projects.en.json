@@ -1,5 +1,16 @@
 [
   {
+    "id": "histoire-et-legendes",
+    "year": "2026",
+    "org": "Histoire et Légendes association",
+    "title": "Histoire et Légendes",
+    "description": "Web management application for a board game and tabletop RPG association: member area (session and tournament sign-ups, game library, membership fee tracking), Filament back-office (treasury, statistics, content management) and a public showcase page.",
+    "category": { "label": "Personal project", "type": "perso" },
+    "stack": ["Laravel", "Filament", "Blade", "Tailwind CSS", "Alpine.js", "MySQL", "Git"],
+    "link": null,
+    "image": "assets/histoire-et-legendes.jpg"
+  },
+  {
     "id": "autonomia64",
     "year": "2026",
     "org": "Association Autonomia 64",
