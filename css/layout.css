@@ -340,6 +340,17 @@
   font-size: 0.85rem;
 }
 
+.marquee__star {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-inline: 0.2em;
+  background-image: url('../assets/icons/star.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 /* Le bandeau defilant est fixe en bas d'ecran : on remonte l'icone de
    consentement cookies (Tarteaucitron, elle aussi fixe en bas a droite)
    au-dessus pour eviter qu'elle ne le recouvre, sur toutes les tailles
