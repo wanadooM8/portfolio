@@ -7,7 +7,7 @@
     "description": "Application web de gestion pour une association de jeux de société et de rôle : espace membre (inscriptions aux séances et tournois, bibliothèque de jeux, suivi de cotisation), back-office Filament (trésorerie, statistiques, gestion du contenu) et page vitrine publique.",
     "category": { "label": "Projet personnel", "type": "perso" },
     "stack": ["Laravel", "Filament", "Blade", "Tailwind CSS", "Alpine.js", "MySQL", "Git"],
-    "link": null,
+    "link": "https://histoireetlegendes.alwaysdata.net/",
     "image": "assets/histoire-et-legendes.jpg"
   },
   {
@@ -18,7 +18,7 @@
     "description": "Stage développeur web : analyse des besoins fonctionnels, développement d'un portail administrable avec Laravel et Filament, intervention sur tout le cycle (analyse, conception, développement, tests, mise en production).",
     "category": { "label": "Stage", "type": "pro" },
     "stack": ["Laravel", "Filament", "PHP", "JavaScript", "HTML/CSS", "MySQL", "Git", "Figma"],
-    "link": null,
+    "link": "https://autonomia64.org/presentation",
     "image": "assets/autonomia64.jpg"
   },
   {
@@ -29,7 +29,7 @@
     "description": "Développement en équipe, méthode agile, d'une application web centrée sur des rooms virtuelles personnalisables.",
     "category": { "label": "Projet étudiant", "type": "study" },
     "stack": ["HTML", "PHP", "CSS", "SQL", "Gestion de projet", "Figma"],
-    "link": null,
+    "link": "https://yujo-network.fr/",
     "image": "assets/yujo.jpg"
   }
 ]

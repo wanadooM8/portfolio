@@ -7,7 +7,7 @@
     "description": "Web management application for a board game and tabletop RPG association: member area (session and tournament sign-ups, game library, membership fee tracking), Filament back-office (treasury, statistics, content management) and a public showcase page.",
     "category": { "label": "Personal project", "type": "perso" },
     "stack": ["Laravel", "Filament", "Blade", "Tailwind CSS", "Alpine.js", "MySQL", "Git"],
-    "link": null,
+    "link": "https://histoireetlegendes.alwaysdata.net/",
     "image": "assets/histoire-et-legendes.jpg"
   },
   {
@@ -18,7 +18,7 @@
     "description": "Web developer internship: functional needs analysis, development of an administrable portal with Laravel and Filament, involvement across the full cycle (analysis, design, development, testing, deployment).",
     "category": { "label": "Internship", "type": "pro" },
     "stack": ["Laravel", "Filament", "PHP", "JavaScript", "HTML/CSS", "MySQL", "Git", "Figma"],
-    "link": null,
+    "link": "https://autonomia64.org/presentation",
     "image": "assets/autonomia64.jpg"
   },
   {
@@ -29,7 +29,7 @@
     "description": "Team development, agile methodology, of a web application centered on customizable virtual rooms.",
     "category": { "label": "Student project", "type": "study" },
     "stack": ["HTML", "PHP", "CSS", "SQL", "Project management", "Figma"],
-    "link": null,
+    "link": "https://yujo-network.fr/",
     "image": "assets/yujo.jpg"
   }
 ]
