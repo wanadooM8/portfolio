@@ -8,8 +8,8 @@
     "title": "Application Histoire et Légendes",
     "description": "Application web de gestion pour une association de jeux de société et de jeux de rôle (Lescar) : espace membre (inscriptions aux séances et tournois, cotisations, statistiques), administration complète avec Filament (membres, trésorerie, saisons), notifications push et page vitrine publique entièrement éditable depuis l'admin. Déployée en production sur AlwaysData.",
     "category": {
-      "label": "Projet associatif",
-      "type": "study"
+      "label": "Projet personnel",
+      "type": "perso"
     },
     "stack": [
       "Laravel",
@@ -28,8 +28,8 @@
     "title": "Home lab auto-hébergé",
     "description": "Home lab monté à partir d'un PC de seconde main et de matériel reconditionné, sous OpenMediaVault (Debian) : près d'une vingtaine de services auto-hébergés en conteneurs (stockage et partage de fichiers, photos, films et séries, mots de passe, documents…), accès distant sécurisé via Tailscale, supervision avec Uptime Kuma et Beszel, et rédaction d'une documentation complète d'exploitation (maintenance, mises à jour, sauvegardes, dépannage).",
     "category": {
-      "label": "Projet perso",
-      "type": "study"
+      "label": "Projet personnel",
+      "type": "perso"
     },
     "stack": [
       "Linux (Debian)",
@@ -63,7 +63,7 @@
       "Git",
       "Figma"
     ],
-    "link": "https://autonomia64.org",
+    "link": "https://autonomia64.org/presentation",
     "image": "assets/autonomia64.jpg"
   },
   {

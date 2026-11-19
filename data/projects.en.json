@@ -8,8 +8,8 @@
     "title": "Histoire et Légendes app",
     "description": "Management web application for a board game and role-playing association (Lescar): member area (session and tournament sign-ups, membership fees, statistics), full administration with Filament (members, treasury, seasons), push notifications and a public showcase page fully editable from the admin. Deployed in production on AlwaysData.",
     "category": {
-      "label": "Association project",
-      "type": "study"
+      "label": "Personal project",
+      "type": "perso"
     },
     "stack": [
       "Laravel",
@@ -29,7 +29,7 @@
     "description": "Home lab built from a second-hand PC and refurbished hardware, running OpenMediaVault (Debian): nearly twenty self-hosted containerized services (file storage and sharing, photos, movies and TV shows, passwords, documents…), secure remote access through Tailscale, monitoring with Uptime Kuma and Beszel, and full operations documentation (maintenance, updates, backups, troubleshooting).",
     "category": {
       "label": "Personal project",
-      "type": "study"
+      "type": "perso"
     },
     "stack": [
       "Linux (Debian)",
@@ -63,7 +63,7 @@
       "Git",
       "Figma"
     ],
-    "link": "https://autonomia64.org",
+    "link": "https://autonomia64.org/presentation",
     "image": "assets/autonomia64.jpg"
   },
   {
