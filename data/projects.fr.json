@@ -1,14 +1,70 @@
 [
   {
+    "id": "homelab",
+    "year": "2026",
+    "org": "Projet personnel",
+    "title": "Home lab auto-hébergé",
+    "description": "Home lab monté à partir d'un PC de seconde main et de matériel reconditionné, sous OpenMediaVault (Debian) : près d'une vingtaine de services auto-hébergés en conteneurs (stockage et partage de fichiers, photos, films et séries, mots de passe, documents…), accès distant sécurisé via Tailscale, supervision avec Uptime Kuma et Beszel, et rédaction d'une documentation complète d'exploitation (maintenance, mises à jour, sauvegardes, dépannage).",
+    "category": {
+      "label": "Projet perso",
+      "type": "study"
+    },
+    "stack": [
+      "Linux (Debian)",
+      "OpenMediaVault",
+      "Docker Compose",
+      "Tailscale",
+      "Jellyfin",
+      "Uptime Kuma",
+      "Documentation"
+    ],
+    "link": null,
+    "image": "assets/homelab.svg"
+  },
+  {
     "id": "autonomia64",
     "year": "2026",
     "org": "Association Autonomia 64",
     "title": "Portail Web & CRM",
     "description": "Stage développeur web : analyse des besoins fonctionnels, développement d'un portail administrable avec Laravel et Filament, intervention sur tout le cycle (analyse, conception, développement, tests, mise en production).",
-    "category": { "label": "Stage", "type": "pro" },
-    "stack": ["Laravel", "Filament", "PHP", "JavaScript", "HTML/CSS", "MySQL", "Git", "Figma"],
+    "category": {
+      "label": "Stage",
+      "type": "pro"
+    },
+    "stack": [
+      "Laravel",
+      "Filament",
+      "PHP",
+      "JavaScript",
+      "HTML/CSS",
+      "MySQL",
+      "Git",
+      "Figma"
+    ],
     "link": null,
     "image": "assets/autonomia64.jpg"
+  },
+  {
+    "id": "sae-plus-court-chemin",
+    "year": "2026",
+    "org": "IUT de Bayonne et du Pays Basque",
+    "link": null,
+    "image": "assets/sae-plus-court-chemin.jpg",
+    "title": "Plus court chemin à Bayonne",
+    "description": "SAÉ de première année (semestre 2) : modélisation du réseau routier de Bayonne sous forme de graphe pondéré (plus de 3 000 sommets issus de coordonnées GPS), implémentation et comparaison des algorithmes de Dijkstra, Bellman-Ford et A* (heuristique de Haversine), avec affichage animé de l'exploration et du chemin trouvé sur la carte.",
+    "category": {
+      "label": "Projet étudiant",
+      "type": "study"
+    },
+    "stack": [
+      "Python",
+      "pandas",
+      "Théorie des graphes",
+      "Dijkstra",
+      "Bellman-Ford",
+      "A*",
+      "Mathématiques"
+    ]
   },
   {
     "id": "yujo",
@@ -16,8 +72,18 @@
     "org": "UPPA",
     "title": "Réseau social Yujo",
     "description": "Développement en équipe, méthode agile, d'une application web centrée sur des rooms virtuelles personnalisables.",
-    "category": { "label": "Projet étudiant", "type": "study" },
-    "stack": ["HTML", "PHP", "CSS", "SQL", "Gestion de projet", "Figma"],
+    "category": {
+      "label": "Projet étudiant",
+      "type": "study"
+    },
+    "stack": [
+      "HTML",
+      "PHP",
+      "CSS",
+      "SQL",
+      "Gestion de projet",
+      "Figma"
+    ],
     "link": null,
     "image": "assets/yujo.jpg"
   }
