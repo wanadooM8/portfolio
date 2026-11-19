@@ -1,5 +1,27 @@
 [
   {
+    "id": "histoire-et-legendes",
+    "year": "2026",
+    "org": "Association Histoire et Légendes",
+    "link": "https://histoireetlegendes.alwaysdata.net",
+    "image": "assets/histoire-et-legendes.jpg",
+    "title": "Histoire et Légendes app",
+    "description": "Management web application for a board game and role-playing association (Lescar): member area (session and tournament sign-ups, membership fees, statistics), full administration with Filament (members, treasury, seasons), push notifications and a public showcase page fully editable from the admin. Deployed in production on AlwaysData.",
+    "category": {
+      "label": "Association project",
+      "type": "study"
+    },
+    "stack": [
+      "Laravel",
+      "Filament",
+      "PHP",
+      "Tailwind CSS",
+      "Alpine.js",
+      "MySQL",
+      "PWA"
+    ]
+  },
+  {
     "id": "homelab",
     "year": "2026",
     "org": "Personal project",
@@ -41,8 +63,29 @@
       "Git",
       "Figma"
     ],
-    "link": null,
+    "link": "https://autonomia64.org",
     "image": "assets/autonomia64.jpg"
+  },
+  {
+    "id": "chat-c",
+    "year": "2026",
+    "org": "IUT de Bayonne et du Pays Basque",
+    "link": null,
+    "image": "assets/chat-c.svg",
+    "title": "Client/server chat in C",
+    "description": "Advanced programming module project: a command-line chat application over TCP sockets. Multi-client server (one thread per client, shared state protected by mutexes), messages broadcast to every participant, channel history sent to each newcomer, custom protocol (length then message) and careful dynamic memory management.",
+    "category": {
+      "label": "Student project",
+      "type": "study"
+    },
+    "stack": [
+      "C",
+      "TCP sockets",
+      "Threads (pthread)",
+      "Mutex",
+      "fork",
+      "Linux"
+    ]
   },
   {
     "id": "sae-plus-court-chemin",
@@ -84,7 +127,7 @@
       "Project management",
       "Figma"
     ],
-    "link": null,
+    "link": "https://yujo-network.fr",
     "image": "assets/yujo.jpg"
   }
 ]

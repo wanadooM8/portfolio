@@ -16,6 +16,7 @@
     "groups": [
       { "title": "Programmation", "items": ["C++", "Python", "Java"] },
       { "title": "Développement web", "items": ["HTML", "CSS", "JavaScript", "PHP"] },
+      { "title": "Frameworks", "items": ["Laravel"] },
       { "title": "Bases de données", "items": ["MySQL", "Oracle"] },
       { "title": "Outils", "items": ["Git", "Figma"] },
       { "title": "Langues", "items": ["Français — C1", "English — B1"] }
@@ -31,11 +32,6 @@
       "date": "2022",
       "title": "Brevet d'initiation aéronautique (BIA)",
       "description": "Lycée Louis-Barthou, Pau."
-    },
-    {
-      "date": "2025",
-      "title": "Réseau social Yujo",
-      "description": "Projet d'équipe, UPPA — voir la section Projets."
     },
     {
       "date": "2025 – 2027",

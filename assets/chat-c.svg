@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <rect width="1600" height="900" fill="#1B1C20"/>
+  <g transform="translate(0 86)">
+  <rect x="40" y="40" width="1520" height="248" fill="#131417" stroke="#46464E" stroke-width="4"/>
+  <rect x="40" y="40" width="1520" height="48" fill="#46464E"/>
+  <text x="64" y="73" font-family="JetBrains Mono, Consolas, 'Courier New', monospace" font-size="22" font-weight="700" fill="#FFFFFF">TERMINAL 1 — SERVEUR</text>
+  <text x="64" y="132" font-family="JetBrains Mono, Consolas, 'Courier New', monospace" font-size="26" fill="#DFE104" xml:space="preserve">$ ./server</text>
+  <text x="64" y="172" font-family="JetBrains Mono, Consolas, 'Courier New', monospace" font-size="26" fill="#E8E8EA" xml:space="preserve">Serveur TCP en ecoute sur le port 64100</text>
+  <text x="64" y="212" font-family="JetBrains Mono, Consolas, 'Courier New', monospace" font-size="26" fill="#E8E8EA" xml:space="preserve">Client connecté. Nombre de clients connectés : 1</text>
+  <text x="64" y="252" font-family="JetBrains Mono, Consolas, 'Courier New', monospace" font-size="26" fill="#E8E8EA" xml:space="preserve">Client connecté. Nombre de clients connectés : 2</text>
+  <rect x="40" y="320" width="1520" height="368" fill="#131417" stroke="#46464E" stroke-width="4"/>
+  <rect x="40" y="320" width="1520" height="48" fill="#46464E"/>
+  <text x="64" y="353" font-family="JetBrains Mono, Consolas, 'Courier New', monospace" font-size="22" font-weight="700" fill="#FFFFFF">TERMINAL 2 — CLIENT</text>
+  <text x="64" y="412" font-family="JetBrains Mono, Consolas, 'Courier New', monospace" font-size="26" fill="#DFE104" xml:space="preserve">$ ./client localhost</text>
+  <text x="64" y="452" font-family="JetBrains Mono, Consolas, 'Courier New', monospace" font-size="26" fill="#E8E8EA" xml:space="preserve">Entrez votre nom d'utilisateur : ethan</text>
+  <text x="64" y="492" font-family="JetBrains Mono, Consolas, 'Courier New', monospace" font-size="26" fill="#E8E8EA" xml:space="preserve">Connexion etablie avec le serveur localhost sur le port 64100</text>
+  <text x="64" y="532" font-family="JetBrains Mono, Consolas, 'Courier New', monospace" font-size="26" fill="#E8E8EA" xml:space="preserve">Message du channel:</text>
+  <text x="64" y="572" font-family="JetBrains Mono, Consolas, 'Courier New', monospace" font-size="26" fill="#8E8E99" xml:space="preserve">alice: salut tout le monde</text>
+  <text x="64" y="612" font-family="JetBrains Mono, Consolas, 'Courier New', monospace" font-size="26" fill="#E8E8EA" xml:space="preserve">Votre phrase : salut alice !</text>
+  <text x="64" y="652" font-family="JetBrains Mono, Consolas, 'Courier New', monospace" font-size="26" fill="#E8E8EA" xml:space="preserve">&gt; alice: le serveur tient la charge ?</text>
+  </g>
+</svg>

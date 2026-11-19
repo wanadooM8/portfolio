@@ -1,5 +1,27 @@
 [
   {
+    "id": "histoire-et-legendes",
+    "year": "2026",
+    "org": "Association Histoire et Légendes",
+    "link": "https://histoireetlegendes.alwaysdata.net",
+    "image": "assets/histoire-et-legendes.jpg",
+    "title": "Application Histoire et Légendes",
+    "description": "Application web de gestion pour une association de jeux de société et de jeux de rôle (Lescar) : espace membre (inscriptions aux séances et tournois, cotisations, statistiques), administration complète avec Filament (membres, trésorerie, saisons), notifications push et page vitrine publique entièrement éditable depuis l'admin. Déployée en production sur AlwaysData.",
+    "category": {
+      "label": "Projet associatif",
+      "type": "study"
+    },
+    "stack": [
+      "Laravel",
+      "Filament",
+      "PHP",
+      "Tailwind CSS",
+      "Alpine.js",
+      "MySQL",
+      "PWA"
+    ]
+  },
+  {
     "id": "homelab",
     "year": "2026",
     "org": "Projet personnel",
@@ -41,8 +63,29 @@
       "Git",
       "Figma"
     ],
-    "link": null,
+    "link": "https://autonomia64.org",
     "image": "assets/autonomia64.jpg"
+  },
+  {
+    "id": "chat-c",
+    "year": "2026",
+    "org": "IUT de Bayonne et du Pays Basque",
+    "link": null,
+    "image": "assets/chat-c.svg",
+    "title": "Chat client/serveur en C",
+    "description": "Projet du module Programmation avancée : application de chat en ligne de commande sur sockets TCP. Serveur multi-clients (un thread par client, accès partagés protégés par mutex), diffusion des messages à tous les participants, historique du channel envoyé à chaque nouvel arrivant, protocole maison (taille puis message) et gestion rigoureuse de la mémoire dynamique.",
+    "category": {
+      "label": "Projet étudiant",
+      "type": "study"
+    },
+    "stack": [
+      "C",
+      "Sockets TCP",
+      "Threads (pthread)",
+      "Mutex",
+      "fork",
+      "Linux"
+    ]
   },
   {
     "id": "sae-plus-court-chemin",
@@ -84,7 +127,7 @@
       "Gestion de projet",
       "Figma"
     ],
-    "link": null,
+    "link": "https://yujo-network.fr",
     "image": "assets/yujo.jpg"
   }
 ]
